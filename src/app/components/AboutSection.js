@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, User, Code, Palette, Database, Zap, Heart, Coffee } from 'lucide-react';
+import { Download, User, Code, Palette, Database, Zap, Heart } from 'lucide-react';
 import Image from 'next/image';
 
 export default function AboutSection() {
