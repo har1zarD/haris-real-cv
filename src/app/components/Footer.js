@@ -5,7 +5,7 @@ import { Heart, Code, Coffee } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-12 border-t border-slate-800">
+    <footer className="gradient-primary text-white py-12 border-t border-blue-400/20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,10 +26,10 @@ export default function Footer() {
               <span className="text-white">Velic</span>
               <span className="text-blue-400">/&gt;</span>
             </motion.h3>
-            <p className="text-gray-400 text-lg">Full Stack Developer</p>
+            <p className="text-professional-muted text-lg">Full Stack Developer</p>
           </div>
 
-          <div className="flex items-center justify-center gap-3 text-gray-400 mb-6">
+          <div className="flex items-center justify-center gap-3 text-professional-muted mb-6">
             <span>Crafted with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
@@ -50,26 +50,28 @@ export default function Footer() {
             <span className="text-cyan-400 font-semibold">Tailwind CSS</span>
           </div>
 
-          <div className="flex items-center justify-center gap-2 text-gray-500 mb-6">
+          <div className="flex items-center justify-center gap-2 text-professional-muted mb-6">
             <Coffee size={16} />
             <span className="text-sm">Powered by coffee and late-night coding sessions</span>
           </div>
 
-          <div className="pt-6 border-t border-slate-800">
+          <div className="pt-6 border-t border-blue-400/20">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-gray-500 text-sm">&copy; 2025 Haris Velić. All rights reserved.</p>
+              <p className="text-professional-muted text-sm">
+                &copy; 2025 Haris Velić. All rights reserved.
+              </p>
               <div className="flex items-center gap-6 text-sm">
                 <motion.a
                   href="#home"
                   whileHover={{ scale: 1.1 }}
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-professional-muted hover:text-blue-400 transition-colors duration-200"
                 >
                   Back to top
                 </motion.a>
                 <motion.a
                   href="mailto:haris.velic@ses.edu.ba"
                   whileHover={{ scale: 1.1 }}
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-professional-muted hover:text-blue-400 transition-colors duration-200"
                 >
                   Say hello
                 </motion.a>

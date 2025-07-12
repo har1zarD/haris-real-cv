@@ -2,7 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  BriefcaseIcon,
+  CalendarIcon,
+  MapPinIcon,
+} from '@heroicons/react/24/outline';
 
 export default function ExperienceSection() {
   const [expandedItems, setExpandedItems] = useState({});
@@ -51,6 +57,7 @@ export default function ExperienceSection() {
         "Mastered Shopify's Polaris design system",
         'Gained exposure to PHP, MySQL, Docker, and MongoDB',
       ],
+      color: 'blue',
     },
     {
       title: 'Assistant Production Manager',
@@ -75,6 +82,7 @@ export default function ExperienceSection() {
         'Contributed to flawless concert execution',
         'Enhanced overall concert experience for audiences',
       ],
+      color: 'purple',
     },
     {
       title: 'Full Stack Developer (Internship)',
@@ -102,6 +110,7 @@ export default function ExperienceSection() {
         'Worked in agile project management framework',
         'Formed part of the most advanced group in the program',
       ],
+      color: 'cyan',
     },
     {
       title: 'Basketball Referee',
@@ -127,6 +136,7 @@ export default function ExperienceSection() {
         'Developed objective officiating skills',
         'Built strong leadership and communication abilities',
       ],
+      color: 'green',
     },
     {
       title: 'Freelance Graphic Designer',
@@ -152,6 +162,7 @@ export default function ExperienceSection() {
         'Contributed to innovation and visual appeal in gaming',
         'Used modern design technologies and creative approaches',
       ],
+      color: 'orange',
     },
     {
       title: 'Web Developer (Internship)',
@@ -178,14 +189,24 @@ export default function ExperienceSection() {
         'Ensured scalability and security in web applications',
         'Gained practical experience in full-stack development',
       ],
+      color: 'indigo',
     },
   ];
 
+  const getColorClasses = (color) => {
+    const colors = {
+      blue: { dot: 'bg-blue-400', accent: 'text-blue-400', bg: 'bg-blue-500/15' },
+      purple: { dot: 'bg-purple-400', accent: 'text-purple-400', bg: 'bg-purple-500/15' },
+      cyan: { dot: 'bg-cyan-400', accent: 'text-cyan-400', bg: 'bg-cyan-500/15' },
+      green: { dot: 'bg-green-400', accent: 'text-green-400', bg: 'bg-green-500/15' },
+      orange: { dot: 'bg-orange-400', accent: 'text-orange-400', bg: 'bg-orange-500/15' },
+      indigo: { dot: 'bg-indigo-400', accent: 'text-indigo-400', bg: 'bg-indigo-500/15' },
+    };
+    return colors[color] || colors.blue;
+  };
+
   return (
-    <section
-      id="experience"
-      className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
-    >
+    <section id="experience" className="py-20 gradient-primary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -193,131 +214,194 @@ export default function ExperienceSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-              EXPERIENCE
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="gradient-text-primary">EXPERIENCE</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-professional max-w-3xl mx-auto">
             My journey through technology, design, and sports - building innovative solutions and
             developing diverse skills
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-cyan-500 to-blue-500"></div>
+          {/* Animated Timeline Line */}
+          <motion.div
+            className="absolute left-8 top-0 w-0.5 bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400"
+            initial={{ height: 0 }}
+            whileInView={{ height: '100%' }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
+          />
 
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative pl-20"
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-6 top-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full border-4 border-slate-900 shadow-lg shadow-blue-500/25"></div>
+          <div className="space-y-12">
+            {experiences.map((exp, index) => {
+              const colorClasses = getColorClasses(exp.color);
 
-                {/* Experience Card */}
-                <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                        {exp.current && (
-                          <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs font-bold rounded-full">
-                            Current
-                          </span>
-                        )}
-                      </div>
-                      <div className="text-blue-400 font-semibold mb-1">{exp.company}</div>
-                      <div className="text-gray-400 text-sm flex items-center gap-4">
-                        <span>{exp.period}</span>
-                        <span>•</span>
-                        <span>{exp.duration}</span>
-                        <span>•</span>
-                        <span>{exp.location}</span>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => toggleExpanded(index)}
-                      className="p-2 hover:bg-slate-700/50 rounded-lg transition-colors"
-                    >
-                      {expandedItems[index] ? (
-                        <ChevronUpIcon className="w-5 h-5 text-blue-400" />
-                      ) : (
-                        <ChevronDownIcon className="w-5 h-5 text-blue-400" />
-                      )}
-                    </button>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {exp.technologies.slice(0, 4).map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {exp.technologies.length > 4 && (
-                      <span className="px-3 py-1 bg-slate-700/50 text-gray-400 rounded-full text-sm">
-                        +{exp.technologies.length - 4} more
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Expandable Content */}
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.2,
+                    ease: 'easeOut',
+                  }}
+                  className="relative pl-20"
+                >
+                  {/* Animated Timeline Dot */}
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{
-                      height: expandedItems[index] ? 'auto' : 0,
-                      opacity: expandedItems[index] ? 1 : 0,
+                    className={`absolute left-6 top-8 w-4 h-4 ${colorClasses.dot} rounded-full border-4 border-gray-900 shadow-professional z-10`}
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.2 + 0.3,
+                      type: 'spring',
+                      stiffness: 300,
                     }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="pt-4 border-t border-slate-700/50">
-                      <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
+                  />
 
-                      {/* All Technologies */}
-                      <div className="mb-4">
-                        <h4 className="text-white font-semibold mb-2">Technologies & Skills:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {exp.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium"
+                  {/* Experience Card */}
+                  <motion.div
+                    className="card-professional p-8 hover:shadow-professional-lg transition-all duration-300"
+                    whileHover={{ y: -4 }}
+                  >
+                    {/* Header Section */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <BriefcaseIcon className={`w-5 h-5 ${colorClasses.accent}`} />
+                          <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                          {exp.current && (
+                            <motion.span
+                              className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.accent} text-xs font-bold rounded-full border border-current/30`}
+                              initial={{ scale: 0 }}
+                              whileInView={{ scale: 1 }}
+                              transition={{ delay: index * 0.2 + 0.5 }}
                             >
-                              {tech}
-                            </span>
-                          ))}
+                              Current
+                            </motion.span>
+                          )}
+                        </div>
+
+                        <div className={`text-lg font-semibold mb-2 ${colorClasses.accent}`}>
+                          {exp.company}
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-4 text-professional-muted text-sm">
+                          <div className="flex items-center gap-1">
+                            <CalendarIcon className="w-4 h-4" />
+                            <span>{exp.period}</span>
+                          </div>
+                          <span>•</span>
+                          <span className="font-medium">{exp.duration}</span>
+                          <span>•</span>
+                          <div className="flex items-center gap-1">
+                            <MapPinIcon className="w-4 h-4" />
+                            <span>{exp.location}</span>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Achievements */}
-                      <div>
-                        <h4 className="text-white font-semibold mb-2">Key Achievements:</h4>
-                        <ul className="space-y-1">
-                          {exp.achievements.map((achievement, achIndex) => (
-                            <li
-                              key={achIndex}
-                              className="text-gray-300 text-sm flex items-start gap-2"
-                            >
-                              <span className="text-blue-400 mt-1">•</span>
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <motion.button
+                        onClick={() => toggleExpanded(index)}
+                        className={`p-3 hover:${colorClasses.bg} rounded-xl transition-all duration-300 group`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {expandedItems[index] ? (
+                          <ChevronUpIcon
+                            className={`w-5 h-5 ${colorClasses.accent} group-hover:scale-110 transition-transform`}
+                          />
+                        ) : (
+                          <ChevronDownIcon
+                            className={`w-5 h-5 ${colorClasses.accent} group-hover:scale-110 transition-transform`}
+                          />
+                        )}
+                      </motion.button>
                     </div>
+
+                    {/* Technology Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {exp.technologies.slice(0, 5).map((tech, techIndex) => (
+                        <motion.span
+                          key={techIndex}
+                          className="pill-professional"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.2 + techIndex * 0.1 }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                      {exp.technologies.length > 5 && (
+                        <span className="px-3 py-1 bg-gray-700/30 text-professional-muted rounded-full text-sm">
+                          +{exp.technologies.length - 5} more
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Expandable Content */}
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{
+                        height: expandedItems[index] ? 'auto' : 0,
+                        opacity: expandedItems[index] ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.4, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className={`pt-6 border-t border-blue-400/20`}>
+                        <p className="text-professional mb-6 leading-relaxed text-lg">
+                          {exp.description}
+                        </p>
+
+                        {/* All Technologies */}
+                        <div className="mb-6">
+                          <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                            <div className={`w-2 h-2 ${colorClasses.dot} rounded-full`}></div>
+                            Technologies & Skills
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies.map((tech, techIndex) => (
+                              <span key={techIndex} className="pill-professional">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Achievements */}
+                        <div>
+                          <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                            <div className={`w-2 h-2 ${colorClasses.dot} rounded-full`}></div>
+                            Key Achievements
+                          </h4>
+                          <div className="grid gap-2">
+                            {exp.achievements.map((achievement, achIndex) => (
+                              <motion.div
+                                key={achIndex}
+                                className="flex items-start gap-3 p-3 glass-effect rounded-lg"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: achIndex * 0.1 }}
+                              >
+                                <div
+                                  className={`w-1.5 h-1.5 ${colorClasses.dot} rounded-full mt-2 flex-shrink-0`}
+                                ></div>
+                                <span className="text-professional text-sm leading-relaxed">
+                                  {achievement}
+                                </span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
                   </motion.div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -22,13 +22,13 @@ export default function ProjectsSection() {
       description:
         'AI-powered product recommendation engine for Shopify stores using machine learning algorithms to boost sales and customer engagement.',
       image:
-        'https://cdn.shopify.com/s/files/1/0090/9236/6436/files/image7_da72d947-3efb-495d-8879-8ba7654235f2_1024x1024.jpg?v=1580958042',
+        'https://adoric.com/blog/wp-content/uploads/2022/11/Product-Recommendations-for-Shopify_BLOG.png',
       users: null,
       rating: null,
       reviews: null,
       tech: ['Python', 'TensorFlow'],
       link: null,
-      gradient: 'from-purple-500 to-pink-500',
+      accentColor: 'purple-400',
       isPrivate: true,
     },
     {
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
       reviews: '150+',
       tech: ['Ruby', 'TypeScript', 'React', 'MySQL', 'Shopify'],
       link: 'https://apps.shopify.com/sky-pilot',
-      gradient: 'from-blue-500 to-cyan-500',
+      accentColor: 'blue-400',
     },
     {
       title: 'SC Loyalty Rewards',
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
       reviews: '120+',
       tech: ['React', 'PHP', 'Laravel', 'Shopify', 'MySQL', 'TypeScript'],
       link: 'https://apps.shopify.com/loyalty-points-by-bold',
-      gradient: 'from-cyan-500 to-blue-600',
+      accentColor: 'cyan-400',
     },
     {
       title: 'SC Product Options',
@@ -66,7 +66,7 @@ export default function ProjectsSection() {
       reviews: '200+',
       tech: ['React', 'PHP', 'Laravel', 'Shopify', 'MySQL', 'TypeScript'],
       link: 'https://apps.shopify.com/product-options',
-      gradient: 'from-blue-600 to-purple-600',
+      accentColor: 'blue-300',
     },
     {
       title: 'Hulk Mobile App Builder',
@@ -79,7 +79,7 @@ export default function ProjectsSection() {
       reviews: '300+',
       tech: ['Vue.js', 'Tailwind CSS', 'Node.js', 'React Native', 'MongoDB'],
       link: 'https://apps.shopify.com/mobile-app-builder',
-      gradient: 'from-purple-600 to-blue-500',
+      accentColor: 'purple-300',
     },
     {
       title: 'UKSK',
@@ -92,7 +92,7 @@ export default function ProjectsSection() {
       reviews: null,
       tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JavaScript'],
       link: 'https://www.utakmice.uksk.ba/',
-      gradient: 'from-orange-500 to-red-500',
+      accentColor: 'orange-400',
       isPrivate: true,
     },
   ];
@@ -122,10 +122,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section
-      id="projects"
-      className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
-    >
+    <section id="projects" className="py-20 gradient-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -134,12 +131,10 @@ export default function ProjectsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-              FEATURED PROJECTS
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="gradient-text-primary">FEATURED PROJECTS</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-professional max-w-3xl mx-auto">
             Applications serving thousands of users globally with cutting-edge features and
             performance
           </p>
@@ -150,8 +145,8 @@ export default function ProjectsSection() {
           {/* Scroll Buttons */}
           <motion.button
             onClick={() => scroll('left')}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-slate-800/90 backdrop-blur-xl rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 ${
-              !canScrollLeft ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-700/90'
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 glass-effect rounded-full border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300 ${
+              !canScrollLeft ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-500/10'
             }`}
             disabled={!canScrollLeft}
             whileHover={{ scale: canScrollLeft ? 1.1 : 1 }}
@@ -162,8 +157,8 @@ export default function ProjectsSection() {
 
           <motion.button
             onClick={() => scroll('right')}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-slate-800/90 backdrop-blur-xl rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 ${
-              !canScrollRight ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-700/90'
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 glass-effect rounded-full border border-blue-400/20 hover:border-blue-400/40 transition-all duration-300 ${
+              !canScrollRight ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-500/10'
             }`}
             disabled={!canScrollRight}
             whileHover={{ scale: canScrollRight ? 1.1 : 1 }}
@@ -176,7 +171,7 @@ export default function ProjectsSection() {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 px-12"
+            className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide pb-4 px-12"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {projects.map((project, index) => (
@@ -185,17 +180,17 @@ export default function ProjectsSection() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
+                whileHover={{ y: -8 }}
                 className="group relative flex-shrink-0 w-96"
               >
                 <div
-                  className="bg-slate-800/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 h-full cursor-pointer"
+                  className="card-professional overflow-hidden h-full cursor-pointer"
                   onClick={() =>
                     project.link && window.open(project.link, '_blank', 'noopener,noreferrer')
                   }
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 bg-gradient-to-br from-slate-700 to-slate-800 overflow-hidden">
+                  <div className="relative h-48 bg-gradient-to-br from-gray-700 to-gray-800 overflow-hidden">
                     {project.image.startsWith('http') ? (
                       <Image
                         src={project.image}
@@ -207,9 +202,9 @@ export default function ProjectsSection() {
                     ) : (
                       <div className="flex items-center justify-center h-full">
                         <div
-                          className={`w-24 h-24 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center`}
+                          className={`w-24 h-24 bg-${project.accentColor}/20 rounded-2xl flex items-center justify-center`}
                         >
-                          <div className="text-white text-2xl font-bold">
+                          <div className={`text-${project.accentColor} text-2xl font-bold`}>
                             {project.title
                               .split(' ')
                               .map((word) => word[0])
@@ -218,18 +213,20 @@ export default function ProjectsSection() {
                         </div>
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
                   </div>
 
                   {/* Project Content */}
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
-                      <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                      <h3
+                        className={`text-xl font-bold text-white group-hover:text-${project.accentColor} transition-colors duration-300`}
+                      >
                         {project.title}
                       </h3>
                       {project.link && (
                         <motion.div
-                          className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-300"
+                          className="btn-primary p-2 text-sm"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
@@ -238,7 +235,7 @@ export default function ProjectsSection() {
                       )}
                     </div>
 
-                    <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+                    <p className="text-professional-muted mb-6 leading-relaxed text-sm">
                       {project.description}
                     </p>
 
@@ -248,12 +245,14 @@ export default function ProjectsSection() {
                         <div className="flex items-center gap-2">
                           <UserGroupIcon className="w-4 h-4 text-blue-400" />
                           <span className="text-white font-semibold text-sm">{project.users}</span>
-                          <span className="text-gray-400 text-xs">users</span>
+                          <span className="text-professional-muted text-xs">users</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <StarIcon className="w-4 h-4 text-yellow-400 fill-current" />
                           <span className="text-white font-semibold text-sm">{project.rating}</span>
-                          <span className="text-gray-400 text-xs">({project.reviews})</span>
+                          <span className="text-professional-muted text-xs">
+                            ({project.reviews})
+                          </span>
                         </div>
                       </div>
                     )}
@@ -261,20 +260,12 @@ export default function ProjectsSection() {
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 text-blue-300 text-xs font-medium rounded-full border border-blue-500/20"
-                        >
+                        <span key={techIndex} className="pill-professional">
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  {/* Hover Effect */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                  ></div>
                 </div>
               </motion.div>
             ))}
@@ -285,7 +276,9 @@ export default function ProjectsSection() {
         <div className="flex justify-center mt-8">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-            <div className="text-gray-400 text-sm">Scroll horizontally to see all projects</div>
+            <div className="text-professional-muted text-sm">
+              Scroll horizontally to see all projects
+            </div>
             <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
           </div>
         </div>
@@ -298,18 +291,15 @@ export default function ProjectsSection() {
           className="text-center mt-16"
         >
           <h3 className="text-2xl font-bold text-white mb-4">Want to see more projects?</h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-professional mb-8 max-w-2xl mx-auto">
             Check out my GitHub profile for more open-source projects and contributions
           </p>
           <motion.a
             href="https://github.com/har1zarD"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-full text-lg shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.5)',
-            }}
+            className="btn-primary text-lg px-8 py-4 shadow-professional-lg inline-flex items-center"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">

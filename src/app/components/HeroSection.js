@@ -95,16 +95,16 @@ export default function HeroSection() {
   useEffect(() => {
     const variants = techStack.map((_, index) => ({
       animate: {
-        y: [0, -20, 0],
-        rotate: [0, 5, -5, 0],
-        scale: [1, 1.1, 1],
+        y: [0, -15, 0],
+        rotate: [0, 3, -3, 0],
+        scale: [1, 1.05, 1],
       },
       transition: {
-        duration: 6 + index * 0.3,
+        duration: 8 + index * 0.2,
         repeat: Infinity,
         repeatType: 'reverse',
         ease: 'easeInOut',
-        delay: index * 0.4,
+        delay: index * 0.3,
       },
     }));
     setFloatingTechVariants(variants);
@@ -120,18 +120,15 @@ export default function HeroSection() {
   };
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden"
-    >
-      {/* Animated Background */}
+    <section id="home" className="relative min-h-screen gradient-primary overflow-hidden">
+      {/* Professional Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,212,255,0.08),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(74,144,226,0.06),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,255,240,0.04),transparent_50%)]"></div>
       </div>
 
-      {/* Floating Tech Stack - Single Layer, No Duplicates */}
+      {/* Floating Tech Stack - Subtle and Professional */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {techStack.map((tech, index) => (
           <motion.div
@@ -139,21 +136,21 @@ export default function HeroSection() {
             className="absolute"
             style={{
               ...techPositions[index % techPositions.length],
-              filter: 'blur(0.5px)',
-              opacity: 0.3,
+              filter: 'blur(0.3px)',
+              opacity: 0.25,
             }}
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.3, scale: 1 }}
-            transition={{ delay: index * 0.1 + 0.5, duration: 0.8 }}
+            animate={{ opacity: 0.25, scale: 1 }}
+            transition={{ delay: index * 0.08 + 0.5, duration: 0.6 }}
           >
             <motion.div
-              className="bg-white/5 backdrop-blur-sm p-3 rounded-xl shadow-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
+              className="glass-effect p-3 rounded-xl shadow-professional hover:shadow-professional-lg transition-all duration-300"
               animate={floatingTechVariants[index]?.animate}
               transition={floatingTechVariants[index]?.transition}
-              whileHover={{ scale: 1.2, opacity: 0.6 }}
+              whileHover={{ scale: 1.1, opacity: 0.4 }}
             >
               <div className="text-center">
-                <div className="w-10 h-10 mb-2 mx-auto relative">
+                <div className="w-8 h-8 mb-2 mx-auto relative">
                   <Image src={tech.icon} alt={tech.name} fill className="object-contain" />
                 </div>
                 <div className="text-white font-medium text-xs">{tech.name}</div>
@@ -179,13 +176,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                HARIS
-              </span>
+              <span className="gradient-text-primary">HARIS</span>
               <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-                VELIĆ
-              </span>
+              <span className="gradient-text-accent">VELIĆ</span>
             </motion.h1>
 
             <motion.h2
@@ -194,21 +187,19 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <span className="bg-gradient-to-r from-blue-500 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
-                FULL STACK DEVELOPER
-              </span>
+              <span className="text-blue-300">FULL STACK DEVELOPER</span>
             </motion.h2>
 
             <motion.p
-              className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed"
+              className="text-xl text-professional max-w-2xl leading-relaxed mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               Crafting digital experiences with modern technologies.
-              <span className="text-blue-400 font-semibold"> 3+ years</span> of building
-              <span className="text-cyan-400 font-semibold"> innovative solutions</span> that serve
-              <span className="text-purple-400 font-semibold"> thousands globally</span>.
+              <span className="text-blue-300 font-semibold"> 3+ years</span> of building
+              <span className="text-cyan-300 font-semibold"> innovative solutions</span> that serve
+              <span className="text-blue-200 font-semibold"> thousands globally</span>.
             </motion.p>
 
             <motion.div
@@ -218,11 +209,8 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold rounded-full text-lg shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 25px 50px -12px rgba(59, 130, 246, 0.5)',
-                }}
+                className="btn-primary text-lg px-8 py-4 shadow-professional-lg"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() =>
                   document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })
@@ -232,7 +220,7 @@ export default function HeroSection() {
               </motion.button>
 
               <motion.button
-                className="px-8 py-4 border-2 border-blue-500 text-blue-400 font-bold rounded-full text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 backdrop-blur-sm"
+                className="btn-secondary text-lg px-8 py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={downloadCV}
@@ -242,7 +230,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Improved Laptop Design */}
+          {/* Right Content - Professional Laptop Design */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -252,18 +240,18 @@ export default function HeroSection() {
             {/* Laptop */}
             <div className="relative">
               {/* Laptop Screen */}
-              <div className="bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl shadow-2xl border-8 border-slate-700 overflow-hidden transform perspective-1000">
+              <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl shadow-2xl border-8 border-gray-700 overflow-hidden">
                 {/* Screen Content */}
-                <div className="bg-slate-900 p-4 rounded-xl">
+                <div className="bg-gray-900 p-4 rounded-xl">
                   {/* VS Code Header */}
-                  <div className="bg-slate-800 rounded-lg overflow-hidden shadow-inner">
-                    <div className="bg-slate-900 px-6 py-3 flex items-center justify-between border-b border-slate-700">
+                  <div className="bg-gray-800 rounded-lg overflow-hidden shadow-inner">
+                    <div className="bg-gray-900 px-6 py-3 flex items-center justify-between border-b border-gray-700">
                       <div className="flex items-center space-x-3">
-                        <div className="w-4 h-4 bg-red-500 rounded-full shadow-lg"></div>
-                        <div className="w-4 h-4 bg-yellow-500 rounded-full shadow-lg"></div>
-                        <div className="w-4 h-4 bg-green-500 rounded-full shadow-lg"></div>
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       </div>
-                      <div className="text-gray-400 text-sm font-mono bg-slate-800 px-4 py-2 rounded-lg">
+                      <div className="text-gray-400 text-sm font-mono bg-gray-800 px-4 py-2 rounded-lg">
                         developer.js
                       </div>
                       <div className="w-8"></div>
@@ -272,13 +260,13 @@ export default function HeroSection() {
                     {/* VS Code Interface */}
                     <div className="flex">
                       {/* Code Editor */}
-                      <div className="flex-1 bg-slate-800">
+                      <div className="flex-1 bg-gray-800">
                         {/* File Tabs */}
-                        <div className="bg-slate-700 px-6 py-2 flex space-x-4 border-b border-slate-600">
-                          <div className="bg-slate-800 px-4 py-2 rounded-t-lg text-sm text-blue-400 font-mono shadow-lg">
+                        <div className="bg-gray-700 px-6 py-2 flex space-x-4 border-b border-gray-600">
+                          <div className="bg-gray-800 px-4 py-2 rounded-t-lg text-sm text-blue-400 font-mono">
                             developer.js
                           </div>
-                          <div className="bg-slate-600 px-4 py-2 rounded-t-lg text-sm text-gray-400 font-mono">
+                          <div className="bg-gray-600 px-4 py-2 rounded-t-lg text-sm text-gray-400 font-mono">
                             skills.json
                           </div>
                         </div>
@@ -356,13 +344,13 @@ export default function HeroSection() {
               </div>
 
               {/* Laptop Base */}
-              <div className="bg-gradient-to-b from-slate-600 to-slate-700 rounded-b-3xl h-8 shadow-2xl border-8 border-t-0 border-slate-700 relative">
+              <div className="bg-gradient-to-b from-gray-600 to-gray-700 rounded-b-3xl h-8 shadow-2xl border-8 border-t-0 border-gray-700 relative">
                 {/* Laptop Hinge */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-2 bg-slate-800 rounded-b-lg"></div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-2 bg-gray-800 rounded-b-lg"></div>
               </div>
 
               {/* Laptop Shadow */}
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full h-12 bg-black/30 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full h-12 bg-black/20 rounded-full blur-2xl"></div>
             </div>
           </motion.div>
         </div>
@@ -376,8 +364,8 @@ export default function HeroSection() {
         transition={{ duration: 0.8, delay: 1 }}
       >
         <motion.div
-          className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center backdrop-blur-sm"
-          animate={{ y: [0, 10, 0] }}
+          className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center glass-effect"
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <motion.div
