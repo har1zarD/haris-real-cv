@@ -18,20 +18,6 @@ export default function ProjectsSection() {
 
   const projects = [
     {
-      title: 'SC AI Product Recommendation',
-      description:
-        'AI-powered product recommendation engine for Shopify stores using machine learning algorithms to boost sales and customer engagement.',
-      image:
-        'https://thumbs.dreamstime.com/b/ai-machine-learning-hands-robot-human-touching-big-data-network-connection-background-science-artificial-intelligence-172987598.jpg',
-      users: null,
-      rating: null,
-      reviews: null,
-      tech: ['Python', 'TensorFlow'],
-      link: null,
-      accentColor: 'purple-400',
-      isPrivate: true,
-    },
-    {
       title: 'Sky Pilot',
       description:
         'Digital file delivery app for Shopify merchants with advanced features and seamless integration.',
