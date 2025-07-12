@@ -28,6 +28,7 @@ export default function ContactSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
 
   const handleInputChange = (e) => {
     setFormData({
@@ -39,19 +40,38 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
-    setIsSubmitting(false);
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form on success
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+        console.error('Error:', data.error);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Network error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -334,6 +354,37 @@ export default function ContactSection() {
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-green-500/15 border border-green-400/30 rounded-lg flex items-center gap-3"
+                >
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <div>
+                    <p className="text-green-400 font-semibold">Message sent successfully!</p>
+                    <p className="text-green-300 text-sm">
+                      I&apos;ll get back to you within 24 hours.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-red-500/15 border border-red-400/30 rounded-lg flex items-center gap-3"
+                >
+                  <div className="w-5 h-5 text-red-400">⚠️</div>
+                  <div>
+                    <p className="text-red-400 font-semibold">Failed to send message</p>
+                    <p className="text-red-300 text-sm">Please try again or contact me directly.</p>
+                  </div>
+                </motion.div>
+              )}
 
               {/* Form Stats */}
               <div className=" gap-4 py-4 border-t flex justify-center items-center border-blue-400/20">
