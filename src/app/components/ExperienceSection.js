@@ -22,15 +22,19 @@ export default function ExperienceSection() {
 
   const experiences = [
     {
-      title: 'Frontend Developer & AI Engineer',
+      title: 'Frontend Developer ( Lead ) & AI Engineer ( Junior )',
       company: 'Shop Circle BH',
       period: 'Dec 2023 - Present',
-      duration: '1 yr',
+      duration: '2 yr',
       location: 'Zmaja od Bosne 74, Sarajevo 71000',
       type: 'Full-time',
       current: true,
-      description:
-        'Frontend Developer specializing in Shopify applications serving thousands of merchants globally. Started as Frontend Lead on Sky Pilot application, and after completing all responsibilities there, transitioned to Frontend Lead role on "SC Loyalty Points and Rewards" where I\'m currently working. Additionally contributed to "Hulk Mobile App Builder" as support developer and recently began working simultaneously as Frontend Lead on "SC Product Option" application. Developed AI-powered product recommendation system using Python and TensorFlow.',
+      description: `Fullstack Developer with a strong focus on JavaScript-based frontend development. While contributing across the stack, I’ve primarily taken on Frontend Lead roles due to my expertise in modern frontend technologies. I began as Frontend Lead on the Sky Pilot application, and after successfully completing that project, I transitioned to lead frontend development for SC Loyalty Points and Rewards, where I'm currently active. I also supported the Hulk Mobile App Builder project and recently assumed the Frontend Lead role on the SC Product Option application.
+
+In addition to leading individual applications, I architected a fully optimized and reusable frontend setup used across all new Shopify applications at Shop Circle. This includes a structured file and folder system tightly integrated with Shopify CLI, designed for scalability, performance, and developer efficiency.
+
+My main strengths lie in JavaScript and React, used to build highly interactive user interfaces, alongside Vue.js for the Hulk Mobile App Builder. I’ve mastered Shopify’s Polaris design system and the Remix framework for building performant applications. While my primary focus has been frontend, I’ve also gained hands-on experience with PHP, MySQL, Docker, and MongoDB through backend collaboration, as most backend components were PHP-based.
+`,
       technologies: [
         'JavaScript',
         'React',
@@ -51,38 +55,11 @@ export default function ExperienceSection() {
         'Currently leading "SC Loyalty Points and Rewards" frontend',
         'Supporting "Hulk Mobile App Builder" development',
         'Leading "SC Product Option" application frontend',
-        'Developed SC AI Product Recommendation system',
-        'Mastered AI/ML technologies including Python and TensorFlow',
-        'Implemented machine learning algorithms for product recommendations',
+        'Learning AI/ML technologies including Python and TensorFlow',
         "Mastered Shopify's Polaris design system",
         'Gained exposure to PHP, MySQL, Docker, and MongoDB',
       ],
       color: 'blue',
-    },
-    {
-      title: 'Assistant Production Manager',
-      company: 'Dino Merlin',
-      period: '2019 - 2024',
-      duration: '5 yrs',
-      location: 'Magaza | Ćurčiluk veliki 20, Sarajevo 71000',
-      type: 'Contract',
-      current: false,
-      description:
-        "I was deeply involved in Dino Merlin's production, focusing on scenography, stage effects, equipment logistics, and stage setup. Collaborating closely with the creative team, I brought stage designs to life, harmonizing seamlessly with Dino Merlin's artistic vision.",
-      technologies: [
-        'Stage Design',
-        'Equipment Logistics',
-        'Project Management',
-        'Creative Collaboration',
-      ],
-      achievements: [
-        'Managed lighting and stage effects (smoke machines, confetti cannons)',
-        'Coordinated instrument setup and technical aspects',
-        'Orchestrated equipment transportation and setup',
-        'Contributed to flawless concert execution',
-        'Enhanced overall concert experience for audiences',
-      ],
-      color: 'purple',
     },
     {
       title: 'Full Stack Developer (Internship)',
@@ -112,32 +89,7 @@ export default function ExperienceSection() {
       ],
       color: 'cyan',
     },
-    {
-      title: 'Basketball Referee',
-      company: 'Sarajevo Canton Basketball Association',
-      period: 'Sep 2019 - Present',
-      duration: '5+ yrs',
-      location: 'Sarajevo, Bosnia and Herzegovina',
-      type: 'Part-time',
-      current: true,
-      description:
-        'During an impressive 12-year journey as a basketball player, I developed a passion and deep understanding of the game, which inspired me to pursue a career in basketball officiating. Determined to achieve excellence in my new role, I quickly advanced in refereeing and am now proudly listed as a licensed referee for the Basketball Federation of Bosnia and Herzegovina.',
-      technologies: [
-        'Leadership',
-        'Decision Making',
-        'Communication',
-        'Conflict Resolution',
-        'Rules Management',
-      ],
-      achievements: [
-        'Licensed referee for Basketball Federation of Bosnia and Herzegovina',
-        'Officiated in various basketball leagues and competitions',
-        'Gained experience in managing games and high-level sports events',
-        'Developed objective officiating skills',
-        'Built strong leadership and communication abilities',
-      ],
-      color: 'green',
-    },
+
     {
       title: 'Freelance Graphic Designer',
       company: 'Majestic Games',
