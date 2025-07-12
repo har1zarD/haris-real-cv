@@ -38,7 +38,7 @@ export default function ProjectsSection() {
       image: 'https://i.ytimg.com/vi/l4bqRg3I2Vk/maxresdefault.jpg',
       users: '2,700+',
       rating: '4.9',
-      reviews: '298+',
+      reviews: '300+',
       tech: ['Ruby', 'TypeScript', 'React', 'MySQL', 'Shopify'],
       link: 'https://apps.shopify.com/sky-pilot',
       accentColor: 'blue-400',
