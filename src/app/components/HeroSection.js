@@ -95,16 +95,16 @@ export default function HeroSection() {
   useEffect(() => {
     const variants = techStack.map((_, index) => ({
       animate: {
-        y: [0, -15, 0],
-        rotate: [0, 3, -3, 0],
-        scale: [1, 1.05, 1],
+        y: [0, -10, 0],
+        rotate: [0, 2, -2, 0],
+        scale: [1, 1.02, 1],
       },
       transition: {
-        duration: 8 + index * 0.2,
+        duration: 6 + index * 0.1,
         repeat: Infinity,
         repeatType: 'reverse',
         ease: 'easeInOut',
-        delay: index * 0.3,
+        delay: index * 0.2,
       },
     }));
     setFloatingTechVariants(variants);
@@ -128,8 +128,8 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,255,240,0.04),transparent_50%)]"></div>
       </div>
 
-      {/* Floating Tech Stack - Subtle and Professional */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      {/* Floating Tech Stack - Simplified for mobile */}
+      <div className="absolute inset-0 pointer-events-none z-0 hidden md:block">
         {techStack.map((tech, index) => (
           <motion.div
             key={tech.name}
@@ -137,44 +137,39 @@ export default function HeroSection() {
             style={{
               ...techPositions[index % techPositions.length],
               filter: 'blur(0.3px)',
-              opacity: 0.25,
+              opacity: 0.2,
             }}
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.25, scale: 1 }}
-            transition={{ delay: index * 0.08 + 0.5, duration: 0.6 }}
+            animate={{ opacity: 0.2, scale: 1 }}
+            transition={{ delay: index * 0.05 + 0.5, duration: 0.4 }}
           >
-            <motion.div
-              className="glass-effect p-3 rounded-xl shadow-professional hover:shadow-professional-lg transition-all duration-300"
-              animate={floatingTechVariants[index]?.animate}
-              transition={floatingTechVariants[index]?.transition}
-              whileHover={{ scale: 1.1, opacity: 0.4 }}
-            >
+            <div className="glass-effect p-3 rounded-xl shadow-professional hover:shadow-professional-lg transition-all duration-300">
               <div className="text-center">
                 <div className="w-8 h-8 mb-2 mx-auto relative">
                   <Image src={tech.icon} alt={tech.name} fill className="object-contain" />
                 </div>
                 <div className="text-white font-medium text-xs">{tech.name}</div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         ))}
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
+      <div className="relative mt-20 lg:mt-10 z-10 flex items-center justify-center min-h-screen px-4">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="text-center lg:text-left"
           >
             <motion.h1
               className="text-6xl md:text-8xl font-black mb-6 leading-tight"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
             >
               <span className="gradient-text-primary">HARIS</span>
               <br />
@@ -183,18 +178,18 @@ export default function HeroSection() {
 
             <motion.h2
               className="text-3xl md:text-4xl font-bold mb-8"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             >
               <span className="text-blue-300">FULL STACK DEVELOPER</span>
             </motion.h2>
 
             <motion.p
               className="text-xl text-professional max-w-2xl leading-relaxed mb-8"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
             >
               Crafting digital experiences with modern technologies.
               <span className="text-blue-300 font-semibold"> 3+ years</span> of building
@@ -204,14 +199,14 @@ export default function HeroSection() {
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
             >
               <motion.button
                 className="btn-primary text-lg px-8 py-4 shadow-professional-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() =>
                   document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })
                 }
@@ -221,8 +216,8 @@ export default function HeroSection() {
 
               <motion.button
                 className="btn-secondary text-lg px-8 py-4"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={downloadCV}
               >
                 Download CV
@@ -232,9 +227,9 @@ export default function HeroSection() {
 
           {/* Right Content - Professional Laptop Design */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             className="relative"
           >
             {/* Laptop */}
@@ -361,17 +356,17 @@ export default function HeroSection() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
+        transition={{ duration: 0.6, delay: 0.8, ease: 'easeOut' }}
       >
         <motion.div
           className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center glass-effect"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
           <motion.div
             className="w-1 h-3 bg-blue-400 rounded-full mt-2"
             animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           />
         </motion.div>
       </motion.div>

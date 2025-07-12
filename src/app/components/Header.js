@@ -62,7 +62,7 @@ export default function Header() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
@@ -85,7 +85,7 @@ export default function Header() {
             href="https://github.com/har1zarD"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center btn-primary text-sm shadow-professional"
+            className="hidden lg:flex items-center btn-primary text-sm shadow-professional"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -98,7 +98,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-blue-500/10 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-blue-500/10 transition-colors"
             whileTap={{ scale: 0.95 }}
           >
             {isMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
@@ -111,7 +111,7 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden py-4 border-t border-blue-400/20"
+            className="lg:hidden py-4 border-t border-blue-400/20"
           >
             <nav className="flex flex-col space-y-2">
               {navItems.map((item) => (

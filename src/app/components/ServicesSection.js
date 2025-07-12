@@ -81,9 +81,10 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -96,15 +97,17 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+        <motion.div
+          className="grid lg:grid-cols-3 gap-8 mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-50px' }}
+        >
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              whileHover={{ y: -8 }}
-              className="group relative"
+              className="group relative hover:transform hover:-translate-y-2 transition-all duration-300"
             >
               <div className="card-professional p-8 h-full">
                 {/* Service Icon */}
@@ -130,26 +133,21 @@ export default function ServicesSection() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-50px' }}
           className="card-professional p-8"
         >
           <div className="grid md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
+              <div key={index} className="text-center">
                 <div className="relative mb-4">
                   <div className="text-5xl md:text-6xl font-black gradient-text-primary">
                     {stat.number}
@@ -158,7 +156,7 @@ export default function ServicesSection() {
                 </div>
                 <h4 className="text-xl font-bold text-white mb-2">{stat.label}</h4>
                 <p className="text-professional-muted">{stat.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -167,7 +165,8 @@ export default function ServicesSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mt-16"
         >
           <h3 className="text-2xl font-bold text-white mb-4">Ready to start your project?</h3>

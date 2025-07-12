@@ -29,11 +29,11 @@ export default function ExperienceSection() {
       location: 'Zmaja od Bosne 74, Sarajevo 71000',
       type: 'Full-time',
       current: true,
-      description: `Fullstack Developer with a strong focus on JavaScript-based frontend development. While contributing across the stack, I’ve primarily taken on Frontend Lead roles due to my expertise in modern frontend technologies. I began as Frontend Lead on the Sky Pilot application, and after successfully completing that project, I transitioned to lead frontend development for SC Loyalty Points and Rewards, where I'm currently active. I also supported the Hulk Mobile App Builder project and recently assumed the Frontend Lead role on the SC Product Option application.
+      description: `Fullstack Developer with a strong focus on JavaScript-based frontend development. While contributing across the stack, I've primarily taken on Frontend Lead roles due to my expertise in modern frontend technologies. I began as Frontend Lead on the Sky Pilot application, and after successfully completing that project, I transitioned to lead frontend development for SC Loyalty Points and Rewards, where I'm currently active. I also supported the Hulk Mobile App Builder project and recently assumed the Frontend Lead role on the SC Product Option application.
 
 In addition to leading individual applications, I architected a fully optimized and reusable frontend setup used across all new Shopify applications at Shop Circle. This includes a structured file and folder system tightly integrated with Shopify CLI, designed for scalability, performance, and developer efficiency.
 
-My main strengths lie in JavaScript and React, used to build highly interactive user interfaces, alongside Vue.js for the Hulk Mobile App Builder. I’ve mastered Shopify’s Polaris design system and the Remix framework for building performant applications. While my primary focus has been frontend, I’ve also gained hands-on experience with PHP, MySQL, Docker, and MongoDB through backend collaboration, as most backend components were PHP-based.
+My main strengths lie in JavaScript and React, used to build highly interactive user interfaces, alongside Vue.js for the Hulk Mobile App Builder. I've mastered Shopify's Polaris design system and the Remix framework for building performant applications. While my primary focus has been frontend, I've also gained hands-on experience with PHP, MySQL, Docker, and MongoDB through backend collaboration, as most backend components were PHP-based.
 `,
       technologies: [
         'JavaScript',
@@ -161,9 +161,10 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
     <section id="experience" className="py-20 gradient-primary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -181,7 +182,8 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
             className="absolute left-8 top-0 w-0.5 bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400"
             initial={{ height: 0 }}
             whileInView={{ height: '100%' }}
-            transition={{ duration: 1.5, ease: 'easeInOut' }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            viewport={{ once: true, margin: '-100px' }}
           />
 
           <div className="space-y-12">
@@ -190,34 +192,25 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
 
               return (
                 <motion.div
+                  onClick={() => toggleExpanded(index)}
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.6,
-                    delay: index * 0.2,
+                    delay: index * 0.1,
                     ease: 'easeOut',
                   }}
-                  className="relative pl-20"
+                  viewport={{ once: true, margin: '-50px' }}
+                  className="relative pl-20 cursor-pointer"
                 >
                   {/* Animated Timeline Dot */}
-                  <motion.div
+                  <div
                     className={`absolute left-6 top-8 w-4 h-4 ${colorClasses.dot} rounded-full border-4 border-gray-900 shadow-professional z-10`}
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.2 + 0.3,
-                      type: 'spring',
-                      stiffness: 300,
-                    }}
                   />
 
                   {/* Experience Card */}
-                  <motion.div
-                    className="card-professional p-8 hover:shadow-professional-lg transition-all duration-300"
-                    whileHover={{ y: -4 }}
-                  >
+                  <div className="card-professional p-8 hover:shadow-professional-lg transition-all duration-300">
                     {/* Header Section */}
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex-1">
@@ -225,14 +218,11 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
                           <BriefcaseIcon className={`w-5 h-5 ${colorClasses.accent}`} />
                           <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
                           {exp.current && (
-                            <motion.span
+                            <span
                               className={`px-3 py-1 ${colorClasses.bg} ${colorClasses.accent} text-xs font-bold rounded-full border border-current/30`}
-                              initial={{ scale: 0 }}
-                              whileInView={{ scale: 1 }}
-                              transition={{ delay: index * 0.2 + 0.5 }}
                             >
                               Current
-                            </motion.span>
+                            </span>
                           )}
                         </div>
 
@@ -276,15 +266,9 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
                     {/* Technology Tags */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {exp.technologies.slice(0, 5).map((tech, techIndex) => (
-                        <motion.span
-                          key={techIndex}
-                          className="pill-professional"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.2 + techIndex * 0.1 }}
-                        >
+                        <span key={techIndex} className="pill-professional">
                           {tech}
-                        </motion.span>
+                        </span>
                       ))}
                       {exp.technologies.length > 5 && (
                         <span className="px-3 py-1 bg-gray-700/30 text-professional-muted rounded-full text-sm">
@@ -300,7 +284,7 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
                         height: expandedItems[index] ? 'auto' : 0,
                         opacity: expandedItems[index] ? 1 : 0,
                       }}
-                      transition={{ duration: 0.4, ease: 'easeInOut' }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
                       <div className={`pt-6 border-t border-blue-400/20`}>
@@ -331,12 +315,9 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
                           </h4>
                           <div className="grid gap-2">
                             {exp.achievements.map((achievement, achIndex) => (
-                              <motion.div
+                              <div
                                 key={achIndex}
                                 className="flex items-start gap-3 p-3 glass-effect rounded-lg"
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: achIndex * 0.1 }}
                               >
                                 <div
                                   className={`w-1.5 h-1.5 ${colorClasses.dot} rounded-full mt-2 flex-shrink-0`}
@@ -344,13 +325,13 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
                                 <span className="text-professional text-sm leading-relaxed">
                                   {achievement}
                                 </span>
-                              </motion.div>
+                              </div>
                             ))}
                           </div>
                         </div>
                       </div>
                     </motion.div>
-                  </motion.div>
+                  </div>
                 </motion.div>
               );
             })}

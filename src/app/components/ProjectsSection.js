@@ -112,9 +112,10 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -154,23 +155,20 @@ export default function ProjectsSection() {
           </motion.button>
 
           {/* Scrollable Container */}
-          <div
+          <motion.div
             ref={scrollRef}
             onScroll={handleScroll}
             className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide pb-4 px-12"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ y: 10, scale: 1.02, transition: { duration: 0.3 } }}
-                className="group relative flex-shrink-0 w-96"
-              >
+              <div key={index} className="group relative flex-shrink-0 w-96">
                 <div
-                  className="card-professional overflow-hidden h-full cursor-pointer"
+                  className="card-professional overflow-hidden h-full cursor-pointer hover:transform hover:scale-105 transition-all duration-300"
                   onClick={() =>
                     project.link && window.open(project.link, '_blank', 'noopener,noreferrer')
                   }
@@ -253,9 +251,9 @@ export default function ProjectsSection() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
@@ -273,7 +271,8 @@ export default function ProjectsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mt-16"
         >
           <h3 className="text-2xl font-bold text-white mb-4">Want to see more projects?</h3>

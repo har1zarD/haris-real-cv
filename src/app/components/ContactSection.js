@@ -143,21 +143,15 @@ export default function ContactSection() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-block glass-effect rounded-full px-6 py-2 border border-blue-400/20 mb-6"
-          >
+          <div className="inline-block glass-effect rounded-full px-6 py-2 border border-blue-400/20 mb-6">
             <span className="text-blue-400 font-mono text-sm">{'<contact />'}</span>
-          </motion.div>
+          </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Get In <span className="gradient-text-primary">Touch</span>
@@ -171,10 +165,10 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Side - Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-50px' }}
             className="space-y-8"
           >
             <div className="card-professional p-8">
@@ -188,15 +182,11 @@ export default function ContactSection() {
               {/* Contact Methods */}
               <div className="space-y-4">
                 {contactInfo.map((contact, index) => (
-                  <motion.a
+                  <a
                     key={index}
                     href={contact.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     className="group flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-blue-500/5 transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <div
@@ -212,19 +202,13 @@ export default function ContactSection() {
                         {contact.value}
                       </div>
                     </div>
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>
 
             {/* Additional Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="glass-effect rounded-2xl p-6 border border-blue-400/20"
-            >
+            <div className="glass-effect rounded-2xl p-6 border border-blue-400/20">
               <div className="flex items-center gap-3 mb-4">
                 <Clock className="w-6 h-6 text-blue-400" />
                 <h4 className="text-xl font-bold text-white">Quick Response</h4>
@@ -237,15 +221,15 @@ export default function ContactSection() {
                 <MapPin className="w-4 h-4" />
                 <span className="text-sm">Sarajevo, Bosnia and Herzegovina</span>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Right Side - Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-50px' }}
             className="card-professional p-8"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -258,17 +242,13 @@ export default function ContactSection() {
               <h4 className="text-lg font-semibold text-white mb-4">What can I help you with?</h4>
               <div className="grid grid-cols-2 gap-3">
                 {projectTypes.map((type, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     className="flex items-center gap-2 p-3 glass-effect rounded-lg hover:bg-blue-500/5 transition-all duration-300"
                   >
                     <div className={type.color}>{type.icon}</div>
                     <span className="text-professional text-sm">{type.label}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

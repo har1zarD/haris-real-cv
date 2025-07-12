@@ -120,21 +120,15 @@ export default function AboutSection() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-100px' }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-block glass-effect rounded-full px-6 py-2 border border-blue-400/20 mb-6"
-          >
+          <div className="inline-block glass-effect rounded-full px-6 py-2 border border-blue-400/20 mb-6">
             <span className="text-blue-400 font-mono text-sm">{'<about />'}</span>
-          </motion.div>
+          </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             About <span className="gradient-text-primary">Me</span>
@@ -148,10 +142,10 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Image and Bio */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             {/* Profile Image */}
             <div className="relative mb-8">
@@ -192,24 +186,20 @@ export default function AboutSection() {
             {/* Fun Facts */}
             <div className="mt-8 space-y-4">
               {funFacts.map((fact, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="flex items-center space-x-3 glass-effect rounded-xl p-4"
                 >
                   <div className="text-blue-400">{fact.icon}</div>
                   <span className="text-professional">{fact.text}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Download CV Button */}
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={downloadCV}
               className="mt-8 btn-primary px-8 py-4 shadow-professional-lg inline-flex items-center gap-3"
             >
@@ -220,10 +210,10 @@ export default function AboutSection() {
 
           {/* Right Side - Skills */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             <h3 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
               <Code className="w-8 h-8 text-blue-400" />
@@ -232,14 +222,7 @@ export default function AboutSection() {
 
             <div className="space-y-6">
               {Object.entries(skills).map(([category, data], index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group card-professional p-6"
-                >
+                <div key={category} className="group card-professional p-6">
                   <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
                     <div className={`${data.bgColor} p-2 rounded-lg ${data.color}`}>
                       {data.icon}
@@ -253,38 +236,25 @@ export default function AboutSection() {
                       </span>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Personal Characteristics */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mt-8 card-professional p-6"
-            >
+            <div className="mt-8 card-professional p-6">
               <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
                 <Heart className="w-5 h-5 text-red-400" />
                 Personal Characteristics
               </h4>
               <div className="grid grid-cols-2 gap-3">
                 {personalTraits.map((trait, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-2 text-professional"
-                  >
+                  <div key={index} className="flex items-center gap-2 text-professional">
                     <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span className="text-sm">{trait}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
