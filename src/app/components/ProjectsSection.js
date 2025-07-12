@@ -22,7 +22,7 @@ export default function ProjectsSection() {
       description:
         'AI-powered product recommendation engine for Shopify stores using machine learning algorithms to boost sales and customer engagement.',
       image:
-        'https://adoric.com/blog/wp-content/uploads/2022/11/Product-Recommendations-for-Shopify_BLOG.png',
+        'https://thumbs.dreamstime.com/b/ai-machine-learning-hands-robot-human-touching-big-data-network-connection-background-science-artificial-intelligence-172987598.jpg',
       users: null,
       rating: null,
       reviews: null,
@@ -36,9 +36,9 @@ export default function ProjectsSection() {
       description:
         'Digital file delivery app for Shopify merchants with advanced features and seamless integration.',
       image: 'https://i.ytimg.com/vi/l4bqRg3I2Vk/maxresdefault.jpg',
-      users: '2,500+',
+      users: '2,700+',
       rating: '4.9',
-      reviews: '150+',
+      reviews: '298+',
       tech: ['Ruby', 'TypeScript', 'React', 'MySQL', 'Shopify'],
       link: 'https://apps.shopify.com/sky-pilot',
       accentColor: 'blue-400',
@@ -48,9 +48,9 @@ export default function ProjectsSection() {
       description:
         'Comprehensive loyalty and rewards program for Shopify stores to boost customer retention.',
       image: 'https://i.ytimg.com/vi/yUthw4az4g0/maxresdefault.jpg',
-      users: '1,800+',
-      rating: '4.8',
-      reviews: '120+',
+      users: '2000+',
+      rating: '4.3',
+      reviews: '70+',
       tech: ['React', 'PHP', 'Laravel', 'Shopify', 'MySQL', 'TypeScript'],
       link: 'https://apps.shopify.com/loyalty-points-by-bold',
       accentColor: 'cyan-400',
@@ -61,9 +61,9 @@ export default function ProjectsSection() {
         'Advanced product customization app enabling merchants to offer unlimited product variants.',
       image:
         'https://i.ytimg.com/vi/BlLZ9vgtNz4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAVqTBSu0baQeJxKPLKnV6lrpePtQ',
-      users: '3,200+',
-      rating: '4.9',
-      reviews: '200+',
+      users: '4,500+',
+      rating: '4.8',
+      reviews: '1,280+',
       tech: ['React', 'PHP', 'Laravel', 'Shopify', 'MySQL', 'TypeScript'],
       link: 'https://apps.shopify.com/product-options',
       accentColor: 'blue-300',
@@ -74,10 +74,10 @@ export default function ProjectsSection() {
         'No-code mobile app builder for Shopify stores with native features and push notifications.',
       image:
         'https://www.hulkapps.com/cdn/shop/files/MOBILE_APP_BUILDER_1280x720_2996e7ea-15ed-4e8d-9065-131b9d655208.png?v=1689761960',
-      users: '5,000+',
-      rating: '4.7',
-      reviews: '300+',
-      tech: ['Vue.js', 'Tailwind CSS', 'Node.js', 'React Native', 'MongoDB'],
+      users: '10+',
+      rating: '5.0',
+      reviews: '70+',
+      tech: ['Vue.js', 'Tailwind CSS'],
       link: 'https://apps.shopify.com/mobile-app-builder',
       accentColor: 'purple-300',
     },
@@ -180,7 +180,7 @@ export default function ProjectsSection() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: 10, scale: 1.02, transition: { duration: 0.3 } }}
                 className="group relative flex-shrink-0 w-96"
               >
                 <div

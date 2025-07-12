@@ -174,7 +174,6 @@ body {
 
 .card-professional:hover {
   border-color: rgba(74, 144, 226, 0.4);
-  transform: translateY(-4px);
   box-shadow: 0 12px 28px -8px rgba(74, 144, 226, 0.15);
 }
 
