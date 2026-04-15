@@ -6,78 +6,64 @@ import Image from 'next/image';
 
 export default function AboutSection() {
   const skills = {
-    'Programming Skills': {
+    Programming: {
       items: [
         'JavaScript',
         'TypeScript',
         'React',
         'Next.js',
         'Remix',
-        'Node.js',
-        'Vue.js',
+        'React Native',
+        'Swift',
+        'SwiftUI',
         'Python',
         'PHP',
-        'MySQL',
-        'MongoDB',
-        'Docker',
-        'Git',
       ],
       icon: <Code className="w-5 h-5" />,
       color: 'text-blue-300',
       bgColor: 'bg-blue-500/15',
     },
-    'AI & Machine Learning': {
-      items: [
-        'Python',
-        'TensorFlow',
-        'Machine Learning',
-        'Product Recommendation',
-        'Data Analysis',
-        'AI Integration',
-      ],
+    Backend: {
+      items: ['Node.js', 'Prisma', 'PostgreSQL', 'MongoDB', 'Redis', 'GraphQL', 'REST'],
+      icon: <Database className="w-5 h-5" />,
+      color: 'text-cyan-300',
+      bgColor: 'bg-cyan-500/15',
+    },
+    Styling: {
+      items: ['Tailwind CSS', 'Polaris', 'Radix UI'],
+      icon: <Palette className="w-5 h-5" />,
+      color: 'text-purple-300',
+      bgColor: 'bg-purple-500/15',
+    },
+    'Payments & Auth': {
+      items: ['Stripe', 'PayPal', 'Apple IAP', 'NextAuth', 'JWT', 'OAuth'],
+      icon: <Zap className="w-5 h-5" />,
+      color: 'text-green-300',
+      bgColor: 'bg-green-500/15',
+    },
+    AI: {
+      items: ['OpenAI', 'Anthropic Claude'],
       icon: <Zap className="w-5 h-5" />,
       color: 'text-purple-300',
       bgColor: 'bg-purple-500/15',
     },
-    'Shopify Development': {
+    DevOps: {
       items: [
-        'Shopify API',
-        'Polaris Design System',
-        'Shopify Apps',
-        'Liquid Templates',
-        'Shopify CLI',
-        'GraphQL',
+        'Docker',
+        'GitHub Actions',
+        'Hetzner',
+        'EAS Build',
+        'Fastlane',
+        'Sentry',
+        'Playwright',
       ],
-      icon: <Database className="w-5 h-5" />,
-      color: 'text-green-300',
-      bgColor: 'bg-green-500/15',
+      icon: <Code className="w-5 h-5" />,
+      color: 'text-blue-300',
+      bgColor: 'bg-blue-500/15',
     },
-    'Design & Creative': {
-      items: [
-        'Adobe Illustrator',
-        'Adobe Photoshop',
-        'Logo Design',
-        'Blender',
-        'UI/UX Design',
-        'Responsive Design',
-        'Tailwind CSS',
-      ],
+    Design: {
+      items: ['Adobe Illustrator', 'Photoshop', 'Blender', 'Logo Design'],
       icon: <Palette className="w-5 h-5" />,
-      color: 'text-cyan-300',
-      bgColor: 'bg-cyan-500/15',
-    },
-    'Other Skills': {
-      items: [
-        'Linux',
-        'MacOS',
-        'Windows',
-        'Sony Vegas',
-        'Premiere Pro',
-        'Camtasia Studio',
-        'Microsoft Office',
-        'RESTful APIs',
-      ],
-      icon: <Zap className="w-5 h-5" />,
       color: 'text-orange-300',
       bgColor: 'bg-orange-500/15',
     },
@@ -162,36 +148,31 @@ export default function AboutSection() {
             </div>
 
             {/* Bio */}
-            <div className="text-professional leading-relaxed space-y-4 card-professional p-6">
+            <div className="text-professional leading-relaxed space-y-4 card-professional p-6 text-lg">
               <p>
-                I am an ambitious and driven individual with a relentless desire to excel in life
-                and make a mark in the IT industry. My diverse interests span the realms of
-                technology, creative design, and sports. As a lifelong learner, I am constantly
-                expanding my horizons and staying updated with the latest trends in the IT world.
+                Full-stack and mobile engineer specializing in JavaScript/TypeScript ecosystems.
+                Currently <span className="text-blue-300 font-semibold">Frontend Lead at Shop
+                Circle BH</span> while co-building{' '}
+                <span className="text-purple-300 font-semibold">Trainera.fit</span> — a production
+                fitness SaaS live on App Store, Google Play, and web.
               </p>
               <p>
-                With a solid educational foundation in computer science, I have cultivated a
-                versatile skill set that fuels my motivation to tackle new challenges head-on and
-                achieve remarkable outcomes. My passion for graphic design fuels my creative flair,
-                allowing me to craft visually captivating and user-friendly solutions.
+                I ship real products end-to-end, from database to native mobile and AI
+                integrations. Whether it&apos;s a Next.js dashboard, a React Native app, or a
+                Swift/SwiftUI Apple Watch companion — I own the stack.
               </p>
               <p>
-                When I&apos;m not immersed in the world of technology, you can find me on the
-                basketball court, honing my skills as a referee. This experience has taught me the
-                value of fair play, quick decision-making, and effective communication—traits that
-                seamlessly integrate into my professional life.
+                When I&apos;m not shipping code, you can find me on the basketball court as a
+                licensed referee for the Basketball Federation of Bosnia and Herzegovina.
               </p>
             </div>
 
             {/* Fun Facts */}
             <div className="mt-8 space-y-4">
               {funFacts.map((fact, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 glass-effect rounded-xl p-4"
-                >
+                <div key={index} className="flex items-center space-x-3 py-2">
                   <div className="text-blue-400">{fact.icon}</div>
-                  <span className="text-professional">{fact.text}</span>
+                  <span className="text-professional text-lg">{fact.text}</span>
                 </div>
               ))}
             </div>
@@ -224,9 +205,7 @@ export default function AboutSection() {
               {Object.entries(skills).map(([category, data], index) => (
                 <div key={category} className="group card-professional p-6">
                   <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <div className={`${data.bgColor} p-2 rounded-lg ${data.color}`}>
-                      {data.icon}
-                    </div>
+                    <div className={data.color}>{data.icon}</div>
                     {category}
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -249,8 +228,8 @@ export default function AboutSection() {
               <div className="grid grid-cols-2 gap-3">
                 {personalTraits.map((trait, index) => (
                   <div key={index} className="flex items-center gap-2 text-professional">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-sm">{trait}</span>
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                    <span className="text-base">{trait}</span>
                   </div>
                 ))}
               </div>

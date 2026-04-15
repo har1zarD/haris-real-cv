@@ -27,7 +27,7 @@ export default function Footer() {
                   Back to top
                 </motion.a>
                 <motion.a
-                  href="mailto:haris.velic@ses.edu.ba"
+                  href="mailto:harisvelic2000@gmail.com"
                   whileHover={{ scale: 1.1 }}
                   className="text-professional-muted hover:text-blue-400 transition-colors duration-200"
                 >

@@ -78,8 +78,8 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       label: 'Email',
-      value: 'haris.velic@ses.edu.ba',
-      link: 'mailto:haris.velic@ses.edu.ba',
+      value: 'harisvelic2000@gmail.com',
+      link: 'mailto:harisvelic2000@gmail.com',
       color: 'text-blue-300',
       bgColor: 'bg-blue-500/15',
     },
@@ -187,10 +187,10 @@ export default function ContactSection() {
                     href={contact.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-blue-500/5 transition-all duration-300 transform hover:-translate-y-1"
+                    className="group flex items-center gap-4 py-3 border-b border-white/5 hover:border-blue-400/30 transition-colors duration-200"
                   >
                     <div
-                      className={`${contact.bgColor} p-3 rounded-lg ${contact.color} group-hover:scale-105 transition-transform duration-300`}
+                      className={`${contact.color} group-hover:scale-110 transition-transform duration-300`}
                     >
                       {contact.icon}
                     </div>
@@ -242,12 +242,9 @@ export default function ContactSection() {
               <h4 className="text-lg font-semibold text-white mb-4">What can I help you with?</h4>
               <div className="grid grid-cols-2 gap-3">
                 {projectTypes.map((type, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 p-3 glass-effect rounded-lg hover:bg-blue-500/5 transition-all duration-300"
-                  >
+                  <div key={index} className="flex items-center gap-2 py-2">
                     <div className={type.color}>{type.icon}</div>
-                    <span className="text-professional text-sm">{type.label}</span>
+                    <span className="text-professional text-base">{type.label}</span>
                   </div>
                 ))}
               </div>

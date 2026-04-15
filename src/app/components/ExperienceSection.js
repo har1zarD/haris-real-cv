@@ -22,6 +22,45 @@ export default function ExperienceSection() {
 
   const experiences = [
     {
+      title: 'Co-Founder & Full-Stack Engineer',
+      company: 'Trainera.fit',
+      period: 'Mar 2025 - Present',
+      duration: '1 yr',
+      location: 'Sarajevo / Remote',
+      type: 'Co-Founder',
+      current: true,
+      featured: true,
+      description:
+        'Co-founded Trainera.fit, a fitness coaching platform connecting personal trainers with clients — featuring training plans, nutrition tracking, progress analytics, messaging, and group coaching. Shipped the full product as lead engineer: Next.js web app, React Native mobile app (live on App Store & Google Play), and a native Apple Watch companion built in Swift/SwiftUI. Integrated Stripe, PayPal, and Apple IAP for subscription management; built an AI Coach and AI-powered food image analysis for personalized training and nutrition feedback. Implemented iOS Live Activities and Home Screen Widgets for real-time workout tracking; synced Apple HealthKit and Health Connect. Localized to 20+ languages with multi-currency support; CI/CD via GitHub Actions; deployed on Hetzner.',
+      technologies: [
+        'Next.js',
+        'React Native',
+        'Swift',
+        'SwiftUI',
+        'watchOS',
+        'Stripe',
+        'PayPal',
+        'Apple IAP',
+        'OpenAI',
+        'Anthropic Claude',
+        'HealthKit',
+        'Prisma',
+        'PostgreSQL',
+        'Hetzner',
+        'GitHub Actions',
+      ],
+      achievements: [
+        'Co-founded and shipped a full production fitness SaaS',
+        'Live on App Store, Google Play, and web with 20+ languages',
+        'Built native Apple Watch companion app in Swift/SwiftUI',
+        'Integrated Stripe, PayPal, and Apple IAP payment flows',
+        'Implemented AI Coach and AI-powered food image analysis',
+        'iOS Live Activities and Home Screen Widgets for workout tracking',
+        'Apple HealthKit and Health Connect integrations',
+      ],
+      color: 'purple',
+    },
+    {
       title: 'Frontend Developer ( Lead ) & AI Engineer ( Junior )',
       company: 'Shop Circle BH',
       period: 'Dec 2023 - Present',
@@ -214,7 +253,7 @@ My main strengths lie in JavaScript and React, used to build highly interactive 
                     {/* Header Section */}
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
+                        <div className="flex items-center gap-3 mb-3 flex-wrap">
                           <BriefcaseIcon className={`w-5 h-5 ${colorClasses.accent}`} />
                           <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
                           {exp.current && (

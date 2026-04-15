@@ -110,10 +110,8 @@ export default function ServicesSection() {
               className="group relative hover:transform hover:-translate-y-2 transition-all duration-300"
             >
               <div className="card-professional p-8 h-full">
-                {/* Service Icon */}
-                <div
-                  className={`w-16 h-16 ${service.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}
-                >
+                {/* Service Icon — no background chip */}
+                <div className="mb-6 group-hover:scale-105 transition-transform duration-300">
                   <div className={service.iconColor}>{service.icon}</div>
                 </div>
 

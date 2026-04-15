@@ -143,13 +143,11 @@ export default function HeroSection() {
             animate={{ opacity: 0.2, scale: 1 }}
             transition={{ delay: index * 0.05 + 0.5, duration: 0.4 }}
           >
-            <div className="glass-effect p-3 rounded-xl shadow-professional hover:shadow-professional-lg transition-all duration-300">
-              <div className="text-center">
-                <div className="w-8 h-8 mb-2 mx-auto relative">
-                  <Image src={tech.icon} alt={tech.name} fill className="object-contain" />
-                </div>
-                <div className="text-white font-medium text-xs">{tech.name}</div>
+            <div className="text-center">
+              <div className="w-8 h-8 mb-2 mx-auto relative">
+                <Image src={tech.icon} alt={tech.name} fill className="object-contain" />
               </div>
+              <div className="text-white font-medium text-xs">{tech.name}</div>
             </div>
           </motion.div>
         ))}
@@ -182,7 +180,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             >
-              <span className="text-blue-300">FULL STACK DEVELOPER</span>
+              <span className="text-blue-300">FULL-STACK &amp; MOBILE ENGINEER</span>
             </motion.h2>
 
             <motion.p
@@ -191,10 +189,11 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
             >
-              Crafting digital experiences with modern technologies.
-              <span className="text-blue-300 font-semibold"> 3+ years</span> of building
-              <span className="text-cyan-300 font-semibold"> innovative solutions</span> that serve
-              <span className="text-blue-200 font-semibold"> thousands globally</span>.
+              Building products end-to-end — <span className="text-blue-300 font-semibold">web</span>,{' '}
+              <span className="text-cyan-300 font-semibold">mobile</span>,{' '}
+              <span className="text-purple-300 font-semibold">AI</span>, and{' '}
+              <span className="text-blue-200 font-semibold">Apple Watch</span>. Currently Frontend
+              Lead at Shop Circle BH and co-founder of Trainera.fit.
             </motion.p>
 
             <motion.div

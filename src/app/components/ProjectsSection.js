@@ -18,6 +18,15 @@ export default function ProjectsSection() {
 
   const projects = [
     {
+      title: 'Trainera.fit',
+      description:
+        'Co-founded fitness coaching platform — Next.js web app, React Native mobile (App Store & Google Play), and a native Apple Watch companion in Swift/SwiftUI. AI Coach, AI food analysis, Stripe/PayPal/Apple IAP, 20+ languages, HealthKit & Health Connect.',
+      image: '/trainera-og.jpg',
+      tech: ['Next.js', 'React Native', 'Swift/watchOS', 'Stripe', 'OpenAI', 'Claude', 'HealthKit'],
+      link: 'https://trainera.fit',
+      accentColor: 'purple-400',
+    },
+    {
       title: 'Sky Pilot',
       description:
         'Digital file delivery app for Shopify merchants with advanced features and seamless integration.',
@@ -40,6 +49,24 @@ export default function ProjectsSection() {
       tech: ['React', 'PHP', 'Laravel', 'Shopify', 'MySQL', 'MongoDB', 'TypeScript'],
       link: 'https://apps.shopify.com/loyalty-points-by-bold',
       accentColor: 'cyan-400',
+    },
+    {
+      title: 'Keystone Loyalty Rewards',
+      description:
+        'Loyalty and rewards platform for Shopify merchants — points, tiers, referrals, and customer retention tools. Frontend Lead at Shop Circle BH.',
+      image: '/keystone-loyalty.png',
+      tech: ['React', 'Remix', 'TypeScript', 'Tailwind', 'Polaris', 'Shopify'],
+      link: 'https://apps.shopify.com/keystone-loyalty-rewards',
+      accentColor: 'cyan-300',
+    },
+    {
+      title: 'SC Store Locator',
+      description:
+        'Store locator app for Shopify merchants — location search, interactive maps, and custom store pages. Built as Frontend Lead at Shop Circle BH.',
+      image: '/sc-store-locator.png',
+      tech: ['React', 'Remix', 'TypeScript', 'Tailwind', 'Polaris', 'Shopify CLI'],
+      link: 'https://apps.shopify.com/store-locator',
+      accentColor: 'blue-300',
     },
     {
       title: 'SC Product Options',
@@ -158,7 +185,7 @@ export default function ProjectsSection() {
           <motion.div
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide pb-4 px-12"
+            className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide pt-4 pb-6 px-12"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -168,14 +195,14 @@ export default function ProjectsSection() {
             {projects.map((project, index) => (
               <div key={index} className="group relative flex-shrink-0 w-96">
                 <div
-                  className="card-professional overflow-hidden h-full cursor-pointer hover:transform hover:scale-105 transition-all duration-300"
+                  className="card-professional overflow-hidden h-full cursor-pointer hover:-translate-y-1 transition-transform duration-200"
                   onClick={() =>
                     project.link && window.open(project.link, '_blank', 'noopener,noreferrer')
                   }
                 >
                   {/* Project Image */}
                   <div className="relative h-48 bg-gradient-to-br from-gray-700 to-gray-800 overflow-hidden">
-                    {project.image.startsWith('http') ? (
+                    {project.image ? (
                       <Image
                         src={project.image}
                         alt={project.title}
