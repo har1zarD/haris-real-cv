@@ -62,13 +62,13 @@ export default function Header() {
         )}
       </header>
 
-      <aside className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-5 no-print">
+      <aside className="hidden lg:flex fixed left-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-1 no-print">
         <a
           href="https://github.com/har1zarD"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          className="text-[--muted] hover:text-[--ink] transition-colors"
+          className="cursor-pointer p-3 text-[--muted] hover:text-[--ink] hover:-translate-y-0.5 transition-all duration-300"
         >
           <Github size={16} />
         </a>
@@ -77,18 +77,18 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-          className="text-[--muted] hover:text-[--ink] transition-colors"
+          className="cursor-pointer p-3 text-[--muted] hover:text-[--ink] hover:-translate-y-0.5 transition-all duration-300"
         >
           <Linkedin size={16} />
         </a>
         <a
           href="mailto:harisvelic2000@gmail.com"
           aria-label="Email"
-          className="text-[--muted] hover:text-[--ink] transition-colors"
+          className="cursor-pointer p-3 text-[--muted] hover:text-[--ink] hover:-translate-y-0.5 transition-all duration-300"
         >
           <Mail size={16} />
         </a>
-        <span className="w-px h-16 bg-[--line] mx-auto" aria-hidden />
+        <span className="w-px h-16 bg-[--line] mx-auto mt-2" aria-hidden />
       </aside>
 
       <a

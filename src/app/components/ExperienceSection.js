@@ -85,7 +85,14 @@ export default function ExperienceSection() {
 
                 <div className="hidden md:flex flex-col items-center pt-1">
                   <span className="text-2xl font-bold text-[--ink]">{job.now || job.year}</span>
-                  <span className="mt-3 w-2.5 h-2.5 rounded-full bg-[--violet-light] glow-dot" aria-hidden />
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 14, delay: 0.2 }}
+                    className="mt-3 w-2.5 h-2.5 rounded-full bg-[--violet-light] glow-dot"
+                    aria-hidden
+                  />
                 </div>
 
                 <p className="text-[15px] leading-relaxed text-[--muted] max-w-md">

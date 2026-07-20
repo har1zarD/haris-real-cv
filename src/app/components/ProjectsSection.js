@@ -98,15 +98,15 @@ export default function ProjectsSection() {
                 i % 2 === 1 ? 'lg:[&>div:first-child]:order-2' : ''
               }`}
             >
-              <div className="relative">
+              <div className="relative group">
                 {project.image ? (
-                  <div className="relative border border-[--line] bg-[--surface] overflow-hidden">
+                  <div className="relative border border-[--line] group-hover:border-[--violet]/60 bg-[--surface] overflow-hidden transition-colors duration-300">
                     <Image
                       src={project.image}
                       alt={project.title}
                       width={1280}
                       height={720}
-                      className="w-full h-auto object-cover"
+                      className="w-full h-auto object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.03]"
                     />
                     <div
                       className="absolute inset-0 bg-gradient-to-t from-[#08080c]/40 to-transparent pointer-events-none"
@@ -130,19 +130,32 @@ export default function ProjectsSection() {
                   {project.description}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">
+                  {project.tags.map((tag, ti) => (
+                    <motion.span
+                      key={tag}
+                      initial={{ opacity: 0, y: 8 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: 0.04 * ti }}
+                      className="tag hover:border-[--violet]/60 hover:text-[--ink] transition-colors duration-300"
+                    >
                       {tag}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-[--ink] hover:text-[--violet-light] transition-colors"
+                  className="group/link cursor-pointer mt-6 inline-flex items-center gap-2 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-[--ink] hover:text-[--violet-light] transition-colors duration-300"
                 >
-                  View live <span aria-hidden>↗</span>
+                  View live{' '}
+                  <span
+                    aria-hidden
+                    className="inline-block transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1"
+                  >
+                    ↗
+                  </span>
                 </a>
               </div>
             </motion.article>

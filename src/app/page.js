@@ -5,19 +5,22 @@ import ExperienceSection from './components/ExperienceSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import MotionRoot from './components/MotionRoot';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <AboutSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <MotionRoot>
+      <div className="min-h-dvh">
+        <Header />
+        <main>
+          <HeroSection />
+          <ProjectsSection />
+          <ExperienceSection />
+          <AboutSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </MotionRoot>
   );
 }
