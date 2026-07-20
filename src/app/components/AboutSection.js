@@ -44,7 +44,7 @@ export default function AboutSection() {
           <p className="font-mono text-sm text-[--ink] leading-relaxed">
             BEng, Computer Science &amp; IT - PIM University Sarajevo, 2023
             <br />
-            English (professional) · German (conversational) · Bosnian (native)
+            English (professional) · Bosnian (native)
           </p>
         </div>
 
