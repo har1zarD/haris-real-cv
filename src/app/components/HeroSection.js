@@ -102,18 +102,13 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.2, 0.6, 0.2, 1] }}
             className="relative self-end justify-self-center lg:justify-self-end hidden sm:block"
           >
-            <div className="absolute inset-0 scale-110 hero-glow opacity-70" aria-hidden />
             <Image
               src="/haris-cutout.png"
               alt="Haris Velić"
               width={1069}
               height={1603}
               priority
-              className="relative w-[19rem] lg:w-[23rem] h-auto drop-shadow-[0_0_40px_rgba(139,92,246,0.25)]"
-            />
-            <div
-              className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08080c] to-transparent"
-              aria-hidden
+              className="relative w-[23rem] lg:w-[27.5rem] h-auto"
             />
           </motion.div>
         </div>
