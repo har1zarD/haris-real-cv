@@ -1,145 +1,153 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const projects = [
   {
     title: 'Sky Pilot',
-    role: 'Frontend Lead',
     description:
-      'Digital file delivery for Shopify merchants - sell videos, ebooks, and downloads with streaming and license control.',
-    rating: '4.9',
-    users: '2,700+ merchants',
-    tech: 'React · TypeScript · Ruby · MySQL',
+      'Digital file delivery for Shopify merchants - sell videos, ebooks, and downloads with streaming and license control. Led the frontend through its current production era.',
+    image: 'https://i.ytimg.com/vi/l4bqRg3I2Vk/maxresdefault.jpg',
+    stats: '★ 4.9 · 2,700+ merchants',
+    tags: ['React', 'TypeScript', 'Ruby', 'MySQL', 'Shopify'],
     link: 'https://apps.shopify.com/sky-pilot',
   },
   {
     title: 'SC Product Options',
-    role: 'Frontend Lead',
     description:
-      'Advanced product customization - unlimited variants and option sets for stores that outgrow Shopify defaults.',
-    rating: '4.8',
-    users: '4,500+ merchants',
-    tech: 'React · TypeScript · PHP · Laravel',
+      'Advanced product customization - unlimited variants and option sets for stores that outgrow Shopify defaults. One of the biggest apps in its category.',
+    image:
+      'https://i.ytimg.com/vi/BlLZ9vgtNz4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAVqTBSu0baQeJxKPLKnV6lrpePtQ',
+    stats: '★ 4.8 · 4,500+ merchants',
+    tags: ['React', 'TypeScript', 'PHP', 'Laravel', 'MongoDB'],
     link: 'https://apps.shopify.com/product-options',
   },
   {
     title: 'SC Loyalty Rewards',
-    role: 'Frontend Lead',
     description:
-      'Points, tiers, and referral programs that keep customers coming back - full loyalty stack for Shopify stores.',
-    rating: '4.3',
-    users: '2,000+ merchants',
-    tech: 'React · TypeScript · PHP · MongoDB',
+      'Points, tiers, and referral programs that keep customers coming back - the full loyalty stack for Shopify stores.',
+    image: 'https://i.ytimg.com/vi/yUthw4az4g0/maxresdefault.jpg',
+    stats: '★ 4.3 · 2,000+ merchants',
+    tags: ['React', 'TypeScript', 'PHP', 'MySQL'],
     link: 'https://apps.shopify.com/loyalty-points-by-bold',
   },
   {
     title: 'Keystone Loyalty Rewards',
-    role: 'Frontend Lead',
     description:
-      'Next-generation loyalty platform - built from scratch on the reusable Shopify CLI setup I architected for the team.',
-    rating: null,
-    users: 'New release',
-    tech: 'React · Remix · TypeScript · Polaris',
+      'Next-generation loyalty platform - built from scratch on the reusable Shopify CLI frontend setup I architected for the whole team.',
+    image: '/keystone-loyalty.png',
+    stats: 'New release',
+    tags: ['React', 'Remix', 'TypeScript', 'Polaris'],
     link: 'https://apps.shopify.com/keystone-loyalty-rewards',
   },
   {
     title: 'SC Store Locator',
-    role: 'Frontend Lead',
     description:
       'Interactive store maps and location search for multi-location brands, embedded straight into their storefront.',
-    rating: null,
-    users: 'New release',
-    tech: 'React · Remix · TypeScript · Polaris',
+    image: '/sc-store-locator.png',
+    stats: 'New release',
+    tags: ['React', 'Remix', 'TypeScript', 'Polaris'],
     link: 'https://apps.shopify.com/store-locator',
   },
   {
     title: 'Hulk Mobile App Builder',
-    role: 'Frontend',
     description:
       'No-code native mobile apps for Shopify stores, with push notifications and real-time storefront sync.',
-    rating: '5.0',
-    users: 'Early access',
-    tech: 'Vue.js · Tailwind CSS',
+    image:
+      'https://www.hulkapps.com/cdn/shop/files/MOBILE_APP_BUILDER_1280x720_2996e7ea-15ed-4e8d-9065-131b9d655208.png?v=1689761960',
+    stats: '★ 5.0 · Early access',
+    tags: ['Vue.js', 'Tailwind CSS'],
     link: 'https://apps.shopify.com/mobile-app-builder',
   },
   {
     title: 'UKSK Delegation System',
-    role: 'Solo build',
     description:
-      'Referee delegation platform for the Sarajevo Canton Basketball Association - assignments, finances, and payments.',
-    rating: null,
-    users: 'In production',
-    tech: 'MongoDB · Express · React · Node',
+      'Referee delegation platform for the Sarajevo Canton Basketball Association - automated assignments, finance tracking, and payments. Designed, built, and shipped solo on the MERN stack.',
+    image: null,
+    stats: 'In production',
+    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
     link: 'https://www.utakmice.uksk.ba/',
   },
 ];
 
-function Stars({ rating }) {
-  return (
-    <span className="text-[--amber] font-mono text-sm" aria-label={`Rated ${rating} out of 5`}>
-      ★ {rating}
-    </span>
-  );
-}
-
 export default function ProjectsSection() {
   return (
-    <section id="work" className="py-20 sm:py-28 border-t border-[--line]">
+    <section id="work" className="relative py-24 sm:py-32 border-t border-[--line]">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="flex items-baseline justify-between mb-4">
-          <h2 className="display text-4xl sm:text-5xl">Shipped</h2>
-          <p className="eyebrow hidden sm:block">Live on the Shopify App Store</p>
-        </div>
-        <p className="max-w-2xl text-[--muted] mb-14">
-          Production apps with real merchants, real reviews, and real revenue on the line. Ratings
-          are live store ratings, not vanity numbers.
-        </p>
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl sm:text-5xl font-bold mb-4"
+        >
+          My <span className="gradient-violet">Work</span>
+        </motion.h2>
+        <p className="eyebrow mb-16">Live on the Shopify App Store · real merchants, real ratings</p>
 
-        <ul>
+        <div className="space-y-20 sm:space-y-28">
           {projects.map((project, i) => (
-            <motion.li
+            <motion.article
               key={project.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.45, delay: 0.03 * i }}
-              className="border-t border-[--line] last:border-b"
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.55 }}
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-14 items-center ${
+                i % 2 === 1 ? 'lg:[&>div:first-child]:order-2' : ''
+              }`}
             >
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group grid sm:grid-cols-[1fr_240px] gap-2 sm:gap-10 py-7 items-start"
-              >
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
-                    {project.title}
-                    <span
+              <div className="relative">
+                {project.image ? (
+                  <div className="relative border border-[--line] bg-[--surface] overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={1280}
+                      height={720}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-[#08080c]/40 to-transparent pointer-events-none"
                       aria-hidden
-                      className="inline-block text-[--muted] transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[--cobalt]"
-                    >
-                      ↗
-                    </span>
-                  </h3>
-                  <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-[--muted]">
-                    {project.description}
-                  </p>
-                </div>
+                    />
+                  </div>
+                ) : (
+                  <div className="relative border border-[--line] bg-[--surface] aspect-video flex items-center justify-center">
+                    <span className="display text-5xl text-[#22222c]">UKSK</span>
+                  </div>
+                )}
+                <span className="absolute -top-5 -left-2 display text-5xl sm:text-6xl text-[#26262f] select-none" aria-hidden>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
 
-                <div className="font-mono text-xs text-[--muted] flex sm:flex-col flex-wrap gap-x-5 gap-y-1.5 sm:text-right">
-                  <span className="text-[--ink]">{project.role}</span>
-                  <span>
-                    {project.rating ? <Stars rating={project.rating} /> : null}
-                    {project.rating ? ' · ' : ''}
-                    {project.users}
-                  </span>
-                  <span>{project.tech}</span>
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-bold">{project.title}</h3>
+                <p className="mt-1.5 font-mono text-xs text-[--violet-light]">{project.stats}</p>
+                <p className="mt-4 text-[15px] leading-relaxed text-[--muted] max-w-lg">
+                  {project.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </a>
-            </motion.li>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-[--ink] hover:text-[--violet-light] transition-colors"
+                >
+                  View live <span aria-hidden>↗</span>
+                </a>
+              </div>
+            </motion.article>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

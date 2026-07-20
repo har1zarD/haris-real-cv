@@ -12,7 +12,7 @@ const channels = [
 ];
 
 const inputClass =
-  'w-full bg-transparent border border-[--line] px-4 py-3 text-[15px] placeholder:text-[--muted] focus:border-[--ink] transition-colors';
+  'w-full bg-transparent border border-[--line] px-4 py-3 text-[15px] placeholder:text-[--muted] focus:border-[--violet] transition-colors';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -71,7 +71,7 @@ export default function ContactSection() {
                   <span className="font-mono text-xs uppercase tracking-widest text-[--muted]">
                     {channel.label}
                   </span>
-                  <span className="text-[15px] group-hover:text-[--cobalt] transition-colors">
+                  <span className="text-[15px] group-hover:text-[--violet-light] transition-colors">
                     {channel.value}
                   </span>
                 </a>
@@ -132,15 +132,15 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-[--ink] text-[#f7f7f4] px-8 py-3 text-sm font-medium hover:bg-[--cobalt] transition-colors disabled:opacity-50"
+              className="bg-[--violet] text-white px-8 py-3 text-sm font-semibold hover:bg-[#7c4ff0] transition-colors disabled:opacity-50"
             >
               {isSubmitting ? 'Sending…' : 'Send message'}
             </button>
             {status === 'success' && (
-              <p className="font-mono text-xs text-[--cobalt]">Sent. I&apos;ll get back to you soon.</p>
+              <p className="font-mono text-xs text-[--violet-light]">Sent. I&apos;ll get back to you soon.</p>
             )}
             {status === 'error' && (
-              <p className="font-mono text-xs text-red-600">
+              <p className="font-mono text-xs text-red-400">
                 Something broke. Email me directly at harisvelic2000@gmail.com.
               </p>
             )}
