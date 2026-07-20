@@ -8,7 +8,7 @@ const projects = [
     title: 'Trainera.fit',
     role: 'Founder & Lead Engineer',
     description:
-      'Fitness coaching SaaS I founded and built end-to-end: Next.js web platform, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, AI Coach and AI food-image analysis, Stripe / PayPal / Apple IAP billing, localized to 20+ languages.',
+      'Fitness coaching SaaS I founded and built end-to-end: Next.js web platform, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, AI Coach and AI food-image analysis, Stripe / PayPal / Apple IAP billing, localized to 20+ languages. Runs on its own today - I stay on as co-founder.',
     image: '/trainera-og.jpg',
     metrics: [
       { value: 'iOS + Android', label: 'live in both stores' },
@@ -138,12 +138,6 @@ export default function ProjectsSection() {
                     aria-hidden
                   />
                 </div>
-                <span
-                  className="absolute -top-6 -left-2 display text-6xl sm:text-7xl text-[#26262f] select-none"
-                  aria-hidden
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
               </div>
 
               <div>

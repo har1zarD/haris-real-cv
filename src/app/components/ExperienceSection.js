@@ -7,15 +7,15 @@ const experiences = [
     company: 'Trainera.fit',
     title: 'Co-Founder & Lead Engineer',
     year: '2025',
-    now: 'NOW',
-    location: 'Sarajevo / Remote',
+    location: 'Side project, remote',
     description:
-      'Founded and shipped a fitness coaching SaaS end-to-end: Next.js web app, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI. AI Coach and food-image analysis with OpenAI and Claude, Stripe / PayPal / Apple IAP billing, HealthKit and Health Connect sync, 20+ languages.',
+      'Founded and shipped a fitness coaching SaaS end-to-end: Next.js web app, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI. AI Coach and food-image analysis with OpenAI and Claude, Stripe / PayPal / Apple IAP billing, 20+ languages. The product now runs on its own; I remain a co-founder with equity, without day-to-day involvement.',
   },
   {
     company: 'Shop Circle',
     title: 'Software Engineer - Frontend Lead',
     year: '2023',
+    now: 'NOW',
     location: 'Sarajevo',
     description:
       'Frontend lead across production Shopify apps serving 9,000+ merchants: Sky Pilot, SC Loyalty Rewards, SC Product Options, Keystone Loyalty Rewards, and SC Store Locator. Architected the reusable Shopify CLI frontend setup adopted across all new company apps. React, Remix, TypeScript, Polaris; sprint planning and technical documentation for the team.',

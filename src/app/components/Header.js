@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const links = [
@@ -11,8 +10,6 @@ const links = [
 ];
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 border-b border-[--line] bg-[#08080c]/80 backdrop-blur-md no-print">
@@ -33,33 +30,14 @@ export default function Header() {
             ))}
           </nav>
 
-          <button
-            className="md:hidden font-mono text-xs uppercase tracking-widest"
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
-            aria-label="Menu"
+          <a
+            href="/cv/Haris_Velic_CV.pdf"
+            download
+            className="md:hidden cursor-pointer font-mono text-[11px] uppercase tracking-[0.16em] text-[--muted] hover:text-[--ink] transition-colors"
           >
-            {open ? 'Close' : 'Menu'}
-          </button>
+            Resume
+          </a>
         </div>
-
-        {open && (
-          <nav className="md:hidden border-t border-[--line] bg-[#08080c] px-5 py-4 flex flex-col gap-4">
-            {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="font-mono text-xs uppercase tracking-widest text-[--muted]"
-                onClick={() => setOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <a href="/cv/Haris_Velic_CV.pdf" download className="font-mono text-xs underline">
-              Resume
-            </a>
-          </nav>
-        )}
       </header>
 
       <aside className="hidden lg:flex fixed left-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-1 no-print">
