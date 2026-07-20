@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     company: 'Trainera.fit',
-    title: 'Co-Founder & Lead Engineer',
+    title: 'Side Project - Built & Shipped Solo',
     year: '2025',
     location: 'Side project, remote',
     description:
-      'Founded and shipped a fitness coaching SaaS end-to-end: Next.js web app, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI. AI Coach and food-image analysis with OpenAI and Claude, Stripe / PayPal / Apple IAP billing, 20+ languages. The product now runs on its own; I remain a co-founder with equity, without day-to-day involvement.',
+      'Built and shipped a fitness coaching SaaS end-to-end: Next.js web app, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI. AI Coach and food-image analysis with OpenAI and Claude, Stripe / PayPal / Apple IAP billing, 20+ languages. It runs autonomously today with no day-to-day involvement from me - everything I learned shipping it goes straight into my full-time engineering work.',
   },
   {
     company: 'Shop Circle',

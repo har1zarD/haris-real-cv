@@ -8,7 +8,7 @@ const projects = [
     title: 'Trainera.fit',
     role: 'Founder & Lead Engineer',
     description:
-      'Fitness coaching SaaS I founded and built end-to-end: Next.js web platform, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, AI Coach and AI food-image analysis, Stripe / PayPal / Apple IAP billing, localized to 20+ languages. Runs on its own today - I stay on as co-founder.',
+      'Fitness coaching SaaS I built end-to-end as a side project: Next.js web platform, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, AI Coach and AI food-image analysis, Stripe / PayPal / Apple IAP billing, localized to 20+ languages. It runs fully on its own today, with zero day-to-day involvement from me - I keep it here as proof of what I can ship solo.',
     image: '/trainera-og.jpg',
     metrics: [
       { value: 'iOS + Android', label: 'live in both stores' },
