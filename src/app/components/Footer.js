@@ -1,42 +1,13 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 export default function Footer() {
   return (
-    <footer className="gradient-primary text-white py-12 border-t border-blue-400/20">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="pt-6 border-t border-blue-400/20">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-professional-muted text-sm">
-                &copy; 2025 Haris Velić. All rights reserved.
-              </p>
-              <div className="flex items-center gap-6 text-sm">
-                <motion.a
-                  href="#home"
-                  whileHover={{ scale: 1.1 }}
-                  className="text-professional-muted hover:text-blue-400 transition-colors duration-200"
-                >
-                  Back to top
-                </motion.a>
-                <motion.a
-                  href="mailto:harisvelic2000@gmail.com"
-                  whileHover={{ scale: 1.1 }}
-                  className="text-professional-muted hover:text-blue-400 transition-colors duration-200"
-                >
-                  Say hello
-                </motion.a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+    <footer className="border-t border-[--line] no-print">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-between">
+        <p className="font-mono text-xs text-[--muted]">
+          © {new Date().getFullYear()} Haris Velić - Sarajevo
+        </p>
+        <p className="font-mono text-xs text-[--muted]">
+          Built with Next.js. No trackers, no cookies.
+        </p>
       </div>
     </footer>
   );

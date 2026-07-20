@@ -1,48 +1,45 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Archivo, IBM_Plex_Mono } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const archivo = Archivo({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-archivo',
+  axes: ['wdth'],
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
+});
 
 export const metadata = {
-  title: 'Haris Velić - Full Stack Developer',
+  title: 'Haris Velić — Full-Stack & Mobile Engineer',
   description:
-    'Full Stack Developer specializing in modern web technologies. Currently working at Shop Circle BH, building Shopify applications that serve thousands of merchants globally.',
+    'Full-stack & mobile engineer in Sarajevo. Frontend Lead at Shop Circle, building Shopify apps used by 9,000+ merchants. React, Next.js, TypeScript, React Native.',
   keywords:
-    'Full Stack Developer, React, Next.js, Shopify, JavaScript, TypeScript, Web Development, Frontend, Backend',
+    'Haris Velić, Full Stack Developer, Frontend Lead, React, Next.js, TypeScript, React Native, Shopify, Sarajevo',
   authors: [{ name: 'Haris Velić' }],
   creator: 'Haris Velić',
   openGraph: {
-    title: 'Haris Velić - Full Stack Developer',
+    title: 'Haris Velić — Full-Stack & Mobile Engineer',
     description:
-      'Full Stack Developer specializing in modern web technologies. Currently working at Shop Circle BH, building Shopify applications that serve thousands of merchants globally.',
-    url: 'https://haris-velic.vercel.app',
-    siteName: 'Haris Velić Portfolio',
+      'Frontend Lead at Shop Circle, building Shopify apps used by 9,000+ merchants. React, Next.js, TypeScript, React Native.',
+    url: 'https://haris-real-cv.vercel.app',
+    siteName: 'Haris Velić',
     locale: 'en_US',
     type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Haris Velić - Full Stack Developer',
-    description: 'Full Stack Developer specializing in modern web technologies.',
-    creator: '@harisvelic',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="bg-slate-900 text-white antialiased min-h-screen font-sans">{children}</body>
+    <html lang="en" className={`${archivo.variable} ${plexMono.variable}`}>
+      <body className="min-h-screen antialiased">{children}</body>
     </html>
   );
 }
