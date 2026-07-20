@@ -16,7 +16,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata = {
   title: 'Haris Velić — Full-Stack & Mobile Engineer',
   description:
-    'Full-stack & mobile engineer in Sarajevo. Frontend Lead at Shop Circle, building Shopify apps used by 9,000+ merchants. React, Next.js, TypeScript, React Native.',
+    'Full-stack & mobile engineer in Sarajevo. Frontend Lead at Shop Circle (9,000+ merchants) and founder of Trainera.fit. React, Next.js, TypeScript, React Native.',
   keywords:
     'Haris Velić, Full Stack Developer, Frontend Lead, React, Next.js, TypeScript, React Native, Shopify, Sarajevo',
   authors: [{ name: 'Haris Velić' }],

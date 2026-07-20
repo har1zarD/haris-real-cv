@@ -33,7 +33,8 @@ export default function AboutSection() {
           <p>
             My work lives where design and engineering meet: I started as a graphic designer, moved
             into frontend, and now lead frontend development on commerce apps used by thousands of
-            merchants every day.
+            merchants every day. On the side I founded Trainera.fit and shipped it solo across web,
+            iOS, Android, and Apple Watch.
           </p>
           <p>
             I work AI-first - Claude Code and Cursor are part of my daily workflow, including custom
