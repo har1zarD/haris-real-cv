@@ -14,6 +14,7 @@ const rise = {
 };
 
 const stats = [
+  { value: '4+', label: 'years experience' },
   { value: '9,000+', label: 'merchants served' },
   { value: '1,900+', label: 'app store reviews' },
   { value: '7', label: 'production apps' },
@@ -74,7 +75,7 @@ export default function HeroSection() {
               I lead frontend on the commerce apps behind{' '}
               <span className="text-[--ink] font-semibold">9,000+ Shopify stores</span>, and I built
               Trainera.fit end-to-end - web, iOS, Android, and Apple Watch. React, Next.js, Remix,
-              React Native, 3+ years of production TypeScript.
+              React Native, 4+ years of production TypeScript.
             </motion.p>
 
             <motion.div custom={4} initial="hidden" animate="show" variants={rise} className="mt-9 flex flex-wrap gap-3">
@@ -117,14 +118,16 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="relative z-10 grid grid-cols-2 lg:grid-cols-4 border-t border-[--line]"
+          className="relative z-10 grid grid-cols-2 lg:grid-cols-5 border-t border-[--line]"
         >
           {stats.map((stat, i) => (
             <div
               key={stat.label}
               className={`py-7 sm:py-8 px-4 text-center ${i > 0 ? 'lg:border-l lg:border-[--line]' : ''} ${
                 i % 2 === 1 ? 'max-lg:border-l max-lg:border-[--line]' : ''
-              } ${i > 1 ? 'max-lg:border-t max-lg:border-[--line]' : ''}`}
+              } ${i > 1 ? 'max-lg:border-t max-lg:border-[--line]' : ''} ${
+                i === stats.length - 1 && stats.length % 2 === 1 ? 'max-lg:col-span-2' : ''
+              }`}
             >
               <dd className="display text-3xl sm:text-4xl text-[--ink]">{stat.value}</dd>
               <dt className="mt-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[--muted]">

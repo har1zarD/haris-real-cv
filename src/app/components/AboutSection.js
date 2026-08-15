@@ -33,9 +33,10 @@ export default function AboutSection() {
           <p>
             My work lives where design and engineering meet: I started as a graphic designer, moved
             into frontend, and now lead frontend development on commerce apps used by thousands of
-            merchants every day. As a side project I built Trainera.fit solo across web, iOS,
-            Android, and Apple Watch - it runs on its own today, and what shipping it taught me
-            goes straight into my day job.
+            merchants every day. Four-plus years in production, two of them shipping React Native
+            and Expo. As a side project I built Trainera.fit solo across web, iOS, Android, and
+            Apple Watch - it runs on its own today, and what shipping it taught me goes straight
+            into my day job.
           </p>
           <p>
             I work AI-first - Claude Code and Cursor are part of my daily workflow, including custom
