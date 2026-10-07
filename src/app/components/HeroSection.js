@@ -104,10 +104,10 @@ export default function HeroSection() {
             className="relative self-end justify-self-center lg:justify-self-end hidden sm:block"
           >
             <Image
-              src="/haris-portrait.png"
+              src="/haris-cutout.png"
               alt="Haris Velić"
-              width={1254}
-              height={1144}
+              width={1069}
+              height={1603}
               priority
               className="relative w-[23rem] lg:w-[27.5rem] h-auto"
             />
