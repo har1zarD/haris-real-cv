@@ -6,9 +6,9 @@ import Image from 'next/image';
 const projects = [
   {
     title: 'Trainera.fit',
-    role: 'Founder & Lead Engineer',
+    role: 'Co-CTO, with my brother',
     description:
-      'Fitness coaching SaaS I built end-to-end as a side project: Next.js web platform, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, AI Coach and AI food-image analysis, Stripe / PayPal / Apple IAP billing, localized to 20+ languages. It runs without needing me day-to-day - I still polish it in my free time, and I keep it here as proof of what I can ship solo.',
+      'Fitness coaching SaaS my brother and I built end to end as its two CTOs: Next.js web platform, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, AI Coach and AI food-image analysis, Stripe / PayPal / Apple IAP billing, localized to 20+ languages. We stepped back in 2026 and it runs on its own - I keep it here as proof of what I can ship.',
     image: '/trainera-og.jpg',
     metrics: [
       { value: 'iOS + Android', label: 'live in both stores' },
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: 'Sky Pilot',
-    role: 'Frontend Lead',
+    role: 'Full-Stack · Frontend Architecture',
     description:
       'Digital file delivery for Shopify merchants - sell videos, ebooks, and downloads with streaming and license control. Carries the Built for Shopify badge, the store’s highest quality bar.',
     image: 'https://i.ytimg.com/vi/l4bqRg3I2Vk/maxresdefault.jpg',
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     title: 'SC Product Options',
-    role: 'Frontend Lead',
+    role: 'Full-Stack · Frontend Architecture',
     description:
       'Advanced product customization - unlimited variants and option sets for stores that outgrow Shopify defaults. One of the biggest apps in its category.',
     image:
@@ -47,7 +47,7 @@ const projects = [
   },
   {
     title: 'SC Store Locator',
-    role: 'Frontend Lead',
+    role: 'Full-Stack · Frontend Architecture',
     description:
       'Interactive store maps and location search for multi-location brands, embedded straight into their storefront.',
     image: '/sc-store-locator.png',
@@ -57,7 +57,7 @@ const projects = [
   },
   {
     title: 'Hulk Mobile App Builder',
-    role: 'Frontend',
+    role: 'Full-Stack',
     description:
       'No-code native iOS and Android apps for Shopify stores, with push notifications and real-time storefront sync. Built for Shopify badge holder.',
     image:
@@ -71,7 +71,7 @@ const projects = [
   },
   {
     title: 'Keystone Loyalty Rewards',
-    role: 'Frontend Lead',
+    role: 'Full-Stack · Frontend Architecture',
     description:
       'Next-generation loyalty platform - built from scratch on the reusable Shopify CLI setup I architected for the whole team. Launched with the Built for Shopify badge.',
     image: '/keystone-loyalty.png',
@@ -84,7 +84,7 @@ const projects = [
   },
   {
     title: 'SC Loyalty Rewards',
-    role: 'Frontend Lead',
+    role: 'Full-Stack · Frontend Architecture',
     description:
       'Points, tiers, and referral programs that keep customers coming back - the full loyalty stack for Shopify stores.',
     image: 'https://i.ytimg.com/vi/yUthw4az4g0/maxresdefault.jpg',

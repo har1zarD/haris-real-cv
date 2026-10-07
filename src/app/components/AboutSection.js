@@ -32,10 +32,11 @@ export default function AboutSection() {
         <div className="max-w-2xl space-y-4 text-[17px] leading-relaxed text-[--muted]">
           <p>
             My work lives where design and engineering meet: I started as a graphic designer, moved
-            into frontend, and now lead frontend development on commerce apps used by thousands of
-            merchants every day. Four-plus years in production, two of them shipping React Native
-            and Expo. As a side project I built Trainera.fit solo across web, iOS, Android, and
-            Apple Watch - it runs on its own today, and what shipping it taught me goes straight
+            into frontend, then full-stack, and today I am a tech lead and full-stack engineer on
+            commerce apps used by thousands of merchants every day. Four-plus years in production,
+            two of them shipping React Native and Expo. With my brother I built Trainera.fit end to
+            end across web, iOS, Android, and Apple Watch - the two of us were its CTOs. We have
+            since stepped back and it runs on its own, and what shipping it taught me goes straight
             into my day job.
           </p>
           <p>

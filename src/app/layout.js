@@ -16,15 +16,15 @@ const plexMono = IBM_Plex_Mono({
 export const metadata = {
   title: 'Haris Velić — Full-Stack & Mobile Engineer',
   description:
-    'Full-stack & mobile engineer in Sarajevo. Frontend Lead at Shop Circle (9,000+ merchants); built Trainera.fit end-to-end as a side project. React, Next.js, TypeScript, React Native.',
+    'Full-stack & mobile engineer in Sarajevo. Software Engineer (Tech Lead) at Shop Circle (9,000+ merchants); built Trainera.fit end to end with my brother as its two CTOs. React, Next.js, TypeScript, React Native.',
   keywords:
-    'Haris Velić, Full Stack Developer, Frontend Lead, React, Next.js, TypeScript, React Native, Shopify, Sarajevo',
+    'Haris Velić, Full Stack Developer, Tech Lead, React, Next.js, TypeScript, React Native, Shopify, Sarajevo',
   authors: [{ name: 'Haris Velić' }],
   creator: 'Haris Velić',
   openGraph: {
     title: 'Haris Velić — Full-Stack & Mobile Engineer',
     description:
-      'Frontend Lead at Shop Circle, building Shopify apps used by 9,000+ merchants. React, Next.js, TypeScript, React Native.',
+      'Software Engineer (Tech Lead) at Shop Circle, building Shopify apps used by 9,000+ merchants. React, Next.js, TypeScript, React Native.',
     url: 'https://haris-real-cv.vercel.app',
     siteName: 'Haris Velić',
     locale: 'en_US',

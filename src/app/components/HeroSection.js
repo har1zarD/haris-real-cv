@@ -1,7 +1,6 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 import { useRef } from 'react';
 
 const rise = {
@@ -33,15 +32,15 @@ export default function HeroSection() {
     <section ref={sectionRef} id="top" className="relative overflow-hidden">
       <motion.div
         style={{ y: glowY }}
-        className="absolute top-[-15%] right-[-15%] w-[65vw] h-[65vw] max-w-3xl max-h-[48rem] hero-glow pointer-events-none"
+        className="absolute top-[-20%] inset-x-0 mx-auto w-[80vw] h-[65vw] max-w-4xl max-h-[44rem] hero-glow pointer-events-none"
         aria-hidden
       />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="min-h-[calc(100dvh-9rem)] grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end pt-28">
-          <div className="pb-14 lg:pb-20">
+        <div className="min-h-[calc(100dvh-9rem)] flex flex-col items-center justify-center text-center pt-28">
+          <div className="pb-14 lg:pb-20 flex flex-col items-center">
             <motion.p custom={0} initial="hidden" animate="show" variants={rise} className="eyebrow mb-6">
-              Sarajevo, Bosnia &amp; Herzegovina · Frontend Lead @ Shop Circle
+              Sarajevo, Bosnia &amp; Herzegovina · Software Engineer (Tech Lead) @ Shop Circle
             </motion.p>
 
             <motion.h1
@@ -70,15 +69,15 @@ export default function HeroSection() {
               initial="hidden"
               animate="show"
               variants={rise}
-              className="mt-6 max-w-xl text-[17px] leading-relaxed text-[--muted]"
+              className="mt-6 max-w-xl mx-auto text-[17px] leading-relaxed text-[--muted]"
             >
-              I lead frontend on the commerce apps behind{' '}
-              <span className="text-[--ink] font-semibold">9,000+ Shopify stores</span>, and I built
-              Trainera.fit end-to-end - web, iOS, Android, and Apple Watch. React, Next.js, Remix,
-              React Native, 4+ years of production TypeScript.
+              Tech lead and full-stack engineer on the commerce apps behind{' '}
+              <span className="text-[--ink] font-semibold">9,000+ Shopify stores</span>. With my
+              brother I built Trainera.fit end to end - web, iOS, Android, and Apple Watch. React,
+              Next.js, Remix, React Native, 4+ years of production TypeScript.
             </motion.p>
 
-            <motion.div custom={4} initial="hidden" animate="show" variants={rise} className="mt-9 flex flex-wrap gap-3">
+            <motion.div custom={4} initial="hidden" animate="show" variants={rise} className="mt-9 flex flex-wrap justify-center gap-3">
               <motion.a
                 whileTap={{ scale: 0.97 }}
                 href="#work"
@@ -97,21 +96,6 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.2, 0.6, 0.2, 1] }}
-            className="relative self-end justify-self-center lg:justify-self-end hidden sm:block"
-          >
-            <Image
-              src="/haris-cutout.png"
-              alt="Haris Velić"
-              width={1069}
-              height={1603}
-              priority
-              className="relative w-[23rem] lg:w-[27.5rem] h-auto"
-            />
-          </motion.div>
         </div>
 
         <motion.dl

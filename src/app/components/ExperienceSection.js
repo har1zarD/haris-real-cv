@@ -5,20 +5,20 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     company: 'Trainera.fit',
-    title: 'Side Project - Built & Shipped Solo',
+    title: 'Co-CTO - Built End to End With My Brother',
     year: '2025',
-    location: 'Side project, remote',
+    location: 'Remote',
     description:
-      'Built and shipped a fitness coaching SaaS end-to-end: Next.js web app, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI. AI Coach and food-image analysis with OpenAI and Claude, Stripe / PayPal / Apple IAP billing, 20+ languages. It runs without needing me day-to-day - everything I learned shipping it goes straight into my full-time engineering work.',
+      'My brother and I were the two CTOs and built and shipped this fitness coaching SaaS end to end: Next.js web app, React Native app live on the App Store and Google Play, native Apple Watch companion in SwiftUI, PostgreSQL schema with Prisma. AI Coach and food-image analysis with OpenAI and Claude, Stripe / PayPal / Apple IAP billing, 20+ languages. We stepped back in 2026 with equity retained and it runs on its own - everything I learned shipping it goes straight into my engineering work.',
   },
   {
     company: 'Shop Circle',
-    title: 'Software Engineer - Frontend Lead',
+    title: 'Software Engineer (Tech Lead)',
     year: '2023',
     now: 'NOW',
     location: 'Sarajevo',
     description:
-      'Frontend lead across production Shopify apps serving 9,000+ merchants: Sky Pilot, SC Loyalty Rewards, SC Product Options, Keystone Loyalty Rewards, and SC Store Locator. Architected the reusable Shopify CLI frontend setup adopted across all new company apps. React, Remix, TypeScript, Polaris; sprint planning and technical documentation for the team.',
+      'Tech lead and full-stack engineer, leading frontend architecture, across production Shopify apps serving 9,000+ merchants: Sky Pilot, SC Loyalty Rewards, SC Product Options, Keystone Loyalty Rewards, and SC Store Locator. Architected the reusable Shopify CLI frontend setup adopted across all new company apps. React, Remix, TypeScript, Polaris; sprint planning, code review and technical documentation for the team.',
   },
   {
     company: 'Ant Colony',
